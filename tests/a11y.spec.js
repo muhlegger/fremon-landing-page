@@ -14,7 +14,9 @@ for (const { name, path } of PAGES) {
     await page.waitForTimeout(1500);
     const { violations } = await new AxeBuilder({ page }).withTags(TAGS).analyze();
     expect(
-      violations.map((v) => `${v.id} (${v.impact}): ${v.help} — ${v.nodes.length} elemento(s), ex.: ${v.nodes[0].target.join(" ")}`),
+      violations.map(
+        (v) => `${v.id} (${v.impact}): ${v.help} — ${v.nodes.length} elemento(s), ex.: ${v.nodes[0].target.join(" ")}`,
+      ),
     ).toEqual([]);
   });
 }

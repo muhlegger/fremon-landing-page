@@ -31,13 +31,12 @@ function seo(env) {
     },
     transformIndexHtml: {
       order: "pre",
-      handler: (html) =>
-        html.replaceAll("%VITE_SITE_URL%", siteUrl).replaceAll("%VITE_ROBOTS%", env.VITE_ROBOTS),
+      handler: (html) => html.replaceAll("%VITE_SITE_URL%", siteUrl).replaceAll("%VITE_ROBOTS%", env.VITE_ROBOTS),
     },
     closeBundle() {
       const robots = indexable
         ? `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`
-        : "# Preview: não indexar. Em produção, defina VITE_ROBOTS=\"index, follow\" no build.\nUser-agent: *\nDisallow: /\n";
+        : '# Preview: não indexar. Em produção, defina VITE_ROBOTS="index, follow" no build.\nUser-agent: *\nDisallow: /\n';
       const urls = PAGES.map(
         ([, , path, priority]) =>
           `  <url>\n    <loc>${siteUrl}${path}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>${priority}</priority>\n  </url>`,
@@ -52,7 +51,10 @@ function seo(env) {
 // O título e o texto de cada página dependem das duas fontes principais (o título do topo usa
 // as duas). Sem pré-carregamento, o navegador só as descobre depois de ler o CSS; com ele, elas
 // chegam junto com o CSS e o texto aparece mais cedo. Os nomes têm hash, então saem do bundle.
-const PRELOAD_FONTS = [/^assets\/manrope-latin-wght-normal-[\w-]+\.woff2$/, /^assets\/source-serif-4-latin-wght-normal-[\w-]+\.woff2$/];
+const PRELOAD_FONTS = [
+  /^assets\/manrope-latin-wght-normal-[\w-]+\.woff2$/,
+  /^assets\/source-serif-4-latin-wght-normal-[\w-]+\.woff2$/,
+];
 
 function preloadFonts() {
   return {
@@ -61,7 +63,9 @@ function preloadFonts() {
     transformIndexHtml: {
       order: "post",
       handler: (html, ctx) => {
-        const files = Object.keys(ctx.bundle ?? {}).filter((name) => PRELOAD_FONTS.some((pattern) => pattern.test(name)));
+        const files = Object.keys(ctx.bundle ?? {}).filter((name) =>
+          PRELOAD_FONTS.some((pattern) => pattern.test(name)),
+        );
         return files.map((file) => ({
           tag: "link",
           attrs: { rel: "preload", href: `/${file}`, as: "font", type: "font/woff2", crossorigin: "" },
@@ -114,7 +118,9 @@ export default defineConfig(({ mode }) => {
     plugins: [seo(env), preloadFonts(), publishOnlyUsedMedia()],
     build: {
       rollupOptions: {
-        input: Object.fromEntries(PAGES.map(([name, file]) => [name, fileURLToPath(new URL(`./${file}`, import.meta.url))])),
+        input: Object.fromEntries(
+          PAGES.map(([name, file]) => [name, fileURLToPath(new URL(`./${file}`, import.meta.url))]),
+        ),
       },
     },
   };

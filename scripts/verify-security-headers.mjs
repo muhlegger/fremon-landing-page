@@ -26,7 +26,10 @@ for (const [name, path] of targets) {
   const response = await fetch(base + path, { redirect: "manual" });
   for (const [key, value] of Object.entries(expected)) {
     const actual = response.headers.get(key);
-    report(actual === value, `${name} ${path} -> ${key}${actual === value ? "" : ` (esperado: ${value} | recebido: ${actual ?? "ausente"})`}`);
+    report(
+      actual === value,
+      `${name} ${path} -> ${key}${actual === value ? "" : ` (esperado: ${value} | recebido: ${actual ?? "ausente"})`}`,
+    );
   }
 }
 
@@ -34,13 +37,19 @@ for (const [name, path] of targets) {
 const home = await fetch(`${base}/`, { redirect: "manual" });
 const hsts = home.headers.get("strict-transport-security") ?? "";
 if (base.startsWith("https://")) {
-  report(/max-age=(\d+)/.test(hsts) && Number(hsts.match(/max-age=(\d+)/)[1]) >= 15552000, `HSTS presente (${hsts || "ausente"}) — vem da Vercel, não sobrescrever`);
+  report(
+    /max-age=(\d+)/.test(hsts) && Number(hsts.match(/max-age=(\d+)/)[1]) >= 15552000,
+    `HSTS presente (${hsts || "ausente"}) — vem da Vercel, não sobrescrever`,
+  );
 }
 
 const csp = home.headers.get("content-security-policy") ?? "";
 report(!/unsafe-eval/.test(csp), "CSP sem 'unsafe-eval'");
 report(!/script-src[^;]*'unsafe-inline'/.test(csp), "CSP: script-src sem 'unsafe-inline'");
-report(/frame-ancestors 'none'/.test(csp) && /object-src 'none'/.test(csp) && /base-uri 'none'/.test(csp), "CSP: frame-ancestors, object-src e base-uri fechados");
+report(
+  /frame-ancestors 'none'/.test(csp) && /object-src 'none'/.test(csp) && /base-uri 'none'/.test(csp),
+  "CSP: frame-ancestors, object-src e base-uri fechados",
+);
 
 console.log(failures ? `\n${failures} verificação(ões) falharam em ${base}` : `\nTudo certo em ${base}`);
 process.exit(failures ? 1 : 0);

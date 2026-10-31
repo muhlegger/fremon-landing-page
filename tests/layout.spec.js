@@ -39,7 +39,9 @@ for (const [width, height, label, touch] of VIEWPORTS) {
         await page.goto(path);
         await renderAllSections(page);
 
-        const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+        const overflow = await page.evaluate(
+          () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        );
         expect(overflow, "rolagem lateral (px além da largura da tela)").toBeLessThanOrEqual(0);
 
         // Só imagens que ocupam espaço na tela: as de variante oculta (ex.: logo claro/escuro) usam

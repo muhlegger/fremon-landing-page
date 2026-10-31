@@ -37,7 +37,8 @@ const setMenu = (open, opener = null) => {
   if (open) {
     menuOpener = opener;
     // Aberto pela barra inferior, o foco vai direto para a seção em que a pessoa está.
-    if (opener === guideToggle) (mobileNavigation.querySelector('[aria-current="location"]') ?? mobileNavigation.querySelector("a"))?.focus();
+    if (opener === guideToggle)
+      (mobileNavigation.querySelector('[aria-current="location"]') ?? mobileNavigation.querySelector("a"))?.focus();
   }
 };
 
@@ -213,7 +214,11 @@ document.querySelectorAll("[data-product-tabs]").forEach((tabsRoot) => {
       if (nextIndex === undefined) return;
       event.preventDefault();
       activateTab(tabs[nextIndex], true);
-      tabs[nextIndex].scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "nearest", inline: "center" });
+      tabs[nextIndex].scrollIntoView({
+        behavior: reducedMotion ? "auto" : "smooth",
+        block: "nearest",
+        inline: "center",
+      });
     });
   });
 });
@@ -274,17 +279,23 @@ if (checkForm) {
 
     scoreValue.textContent = String(score);
     scoreRing.style.setProperty("--score", String(score / questions.length));
-    scoreRing.style.setProperty("--score-color", score === questions.length ? "#2eb07c" : score >= 4 ? "#e0a530" : "#e0564f");
+    scoreRing.style.setProperty(
+      "--score-color",
+      score === questions.length ? "#2eb07c" : score >= 4 ? "#e0a530" : "#e0564f",
+    );
 
     if (pending.length === 0) {
       title.textContent = "Seu prédio está em dia.";
-      text.textContent = "Raro e valioso. O Fremon mantém essa cadência e guarda as evidências para quando alguém perguntar.";
+      text.textContent =
+        "Raro e valioso. O Fremon mantém essa cadência e guarda as evidências para quando alguém perguntar.";
     } else if (score >= 4) {
       title.textContent = `Quase lá: ${pending.length === 1 ? "um ponto de atenção" : `${pending.length} pontos de atenção`}.`;
-      text.textContent = "Pouca coisa separa o seu prédio de uma gestão sem sustos, e é justamente o que costuma ser lembrado tarde.";
+      text.textContent =
+        "Pouca coisa separa o seu prédio de uma gestão sem sustos, e é justamente o que costuma ser lembrado tarde.";
     } else {
       title.textContent = `${pending.length} pendências que podem virar problema.`;
-      text.textContent = "Nada que não se resolva com método: organizar, priorizar e acompanhar é exatamente o que o Fremon faz.";
+      text.textContent =
+        "Nada que não se resolva com método: organizar, priorizar e acompanhar é exatamente o que o Fremon faz.";
     }
 
     list.replaceChildren(
@@ -323,7 +334,10 @@ if (checkForm) {
     if (challenge && summary && !challenge.value.includes("Diagnóstico rápido")) {
       challenge.value = challenge.value ? `${challenge.value}\n${summary}` : summary;
     }
-    window.setTimeout(() => demoForm.querySelector('input[name="name"]')?.focus({ preventScroll: true }), reducedMotion ? 0 : 700);
+    window.setTimeout(
+      () => demoForm.querySelector('input[name="name"]')?.focus({ preventScroll: true }),
+      reducedMotion ? 0 : 700,
+    );
   });
 }
 
@@ -369,7 +383,13 @@ if (decaySection) {
   const decayRange = decaySection.querySelector("[data-decay-range]");
   const decayTicks = [...decaySection.querySelectorAll("[data-decay-stage]")];
   const field = (name) => decaySection.querySelector(`[data-decay-${name}]`);
-  const output = { when: field("when"), title: field("title"), cost: field("cost"), fix: field("fix"), live: field("live") };
+  const output = {
+    when: field("when"),
+    title: field("title"),
+    cost: field("cost"),
+    fix: field("fix"),
+    live: field("live"),
+  };
   const costs = decayTicks.map((tick) => Number(tick.dataset.cost));
   let current = 0;
   let shownStage = -1;
@@ -379,7 +399,8 @@ if (decaySection) {
   const formatCost = (value) => {
     if (value < 1000) return `R$ ${Math.round(value / 10) * 10}`;
     const thousands = value / 1000;
-    const text = thousands < 10 ? thousands.toFixed(1).replace(".0", "").replace(".", ",") : String(Math.round(thousands));
+    const text =
+      thousands < 10 ? thousands.toFixed(1).replace(".0", "").replace(".", ",") : String(Math.round(thousands));
     return `R$ ${text} mil`;
   };
 
@@ -388,7 +409,10 @@ if (decaySection) {
     decayStage.style.setProperty("--t", current.toFixed(3));
     // Verde → âmbar → vermelho, sempre com contraste sobre o papel.
     const mix = (a, b, p) => a.map((channel, i) => Math.round(channel + (b[i] - channel) * p));
-    const rgb = current <= 1.5 ? mix([46, 130, 102], [183, 121, 31], current / 1.5) : mix([183, 121, 31], [184, 68, 62], (current - 1.5) / 1.5);
+    const rgb =
+      current <= 1.5
+        ? mix([46, 130, 102], [183, 121, 31], current / 1.5)
+        : mix([183, 121, 31], [184, 68, 62], (current - 1.5) / 1.5);
     decayStage.style.setProperty("--cost-color", `rgb(${rgb.join(" ")})`);
     decayRange.value = String(Math.round(current * 100));
 
@@ -610,7 +634,11 @@ if (memory) {
     const where = selected.querySelector(".mem-where")?.textContent;
     file.classList.toggle("is-lost", lost);
     out.meta.textContent =
-      mode === "com" ? (selected.dataset.year ? `${kind} · no acervo do prédio` : kind) : `${lost ? "Não encontrado" : "Onde está"} · ${where}`;
+      mode === "com"
+        ? selected.dataset.year
+          ? `${kind} · no acervo do prédio`
+          : kind
+        : `${lost ? "Não encontrado" : "Onde está"} · ${where}`;
     out.name.textContent = selected.querySelector(".mem-name").textContent;
     out.text.textContent = mode === "com" ? selected.dataset.com : selected.dataset.sem;
   };
@@ -625,7 +653,8 @@ if (memory) {
     items.forEach((other) => other.setAttribute("aria-pressed", String(other === item)));
     placeFile();
     updateFile();
-    if (announce && item) out.live.textContent = `${out.name.textContent}. ${out.meta.textContent}. ${out.text.textContent}`;
+    if (announce && item)
+      out.live.textContent = `${out.name.textContent}. ${out.meta.textContent}. ${out.text.textContent}`;
   };
 
   const setMode = (next, { wave = false, announce = false } = {}) => {
@@ -1073,7 +1102,9 @@ if (!reducedMotion) {
 
   // [elemento, fator]: positivo desce com a rolagem, negativo sobe. Só a foto de fundo do
   // topo, que é decorativa: telas do sistema e fotos ficam paradas e nítidas, sem ampliação.
-  const parallax = [[".hero-media img", 0.12]].flatMap(([selector, factor]) => [...document.querySelectorAll(selector)].map((element) => [element, factor]));
+  const parallax = [[".hero-media img", 0.12]].flatMap(([selector, factor]) =>
+    [...document.querySelectorAll(selector)].map((element) => [element, factor]),
+  );
 
   // Só mede as fotos perto da tela: medir uma foto dentro de uma seção ainda não desenhada
   // (content-visibility) obrigaria o navegador a montar a seção inteira antes da hora.
