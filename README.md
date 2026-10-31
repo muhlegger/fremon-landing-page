@@ -94,6 +94,48 @@ node scripts/verify-security-headers.mjs https://www.fremon.com.br
 
 O script sai com erro se algum header publicado divergir do `vercel.json`.
 
+## Qualidade
+
+Verificações feitas em 30/10/2026 na versão publicada (Lighthouse 12; no celular, rede 4G lenta
+simulada e mediana de três medições). Os números mudam com o conteúdo: use os comandos abaixo
+para medir de novo.
+
+| Verificação | Ferramenta | Resultado |
+| --- | --- | --- |
+| Cabeçalhos de segurança | Mozilla HTTP Observatory | A+ (12 de 12 testes) |
+| Configuração publicada x `vercel.json` | `scripts/verify-security-headers.mjs` | 20 de 20 itens |
+| Dependências | `npm audit` | Nenhuma vulnerabilidade conhecida |
+| Recursos de terceiros | Análise das requisições da página | Nenhum |
+| Desempenho | Lighthouse | Computador 100, celular 98 |
+| Acessibilidade, boas práticas e SEO | Lighthouse | 100 nas três categorias, no celular e no computador |
+| Acessibilidade (WCAG 2.2 A e AA) | axe-core, com todas as seções renderizadas | Nenhuma violação nas 3 páginas |
+| Layout | Chromium automatizado, 15 resoluções de 320 a 2560 px | Sem rolagem lateral, imagem quebrada ou erro de console |
+
+Métricas do Lighthouse:
+
+| Métrica | Celular | Computador | Limite recomendado |
+| --- | --- | --- | --- |
+| First Contentful Paint | 1,2 s | 0,3 s | até 1,8 s |
+| Largest Contentful Paint | 2,4 s | 0,5 s | até 2,5 s |
+| Total Blocking Time | 30 ms | 0 ms | até 200 ms |
+| Cumulative Layout Shift | 0 | 0 | até 0,1 |
+| Peso da página | 276 KB | 335 KB | n/a |
+| Requisições | 11 | 13 | n/a |
+
+No celular o LCP fica perto do limite: o maior elemento é o título, que é redesenhado quando
+a fonte da marca termina de carregar na rede 4G simulada.
+
+Para reproduzir:
+
+```bash
+npm audit
+node scripts/verify-security-headers.mjs https://www.fremon.com.br
+npx lighthouse https://www.fremon.com.br --preset=desktop --view
+npx lighthouse https://www.fremon.com.br --view          # perfil de celular (padrão)
+```
+
+O Observatory roda em <https://developer.mozilla.org/en-US/observatory>.
+
 ## Deploy
 
 Hospedado na Vercel (preset Vite). Os headers só valem se o `vercel.json` estiver na pasta de
