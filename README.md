@@ -118,10 +118,12 @@ quando rodados à mão com `BASE_URL`:
 - **Layout:** as 3 páginas em 15 resoluções, de 320 a 2560 px, com emulação de toque nos celulares
   e tablets. Falham se houver rolagem lateral, imagem quebrada, erro de console ou requisição
   que falhe.
-- **Acessibilidade:** axe-core com WCAG 2.2 A e AA, depois de renderizar todas as seções.
+- **Acessibilidade:** axe-core com WCAG 2.2 A e AA, uma análise por seção, com a seção na tela e movimento
+  reduzido. As seções usam `content-visibility: auto`, e o axe trata como invisível o que o navegador não
+  desenhou: uma análise única da página deixaria essas seções sem verificação.
 
-As medições abaixo foram feitas em 31/10/2026 no site publicado, depois da correção dos rótulos
-de link (o CI não repete medições no site publicado). Lighthouse 13.6; no celular, rede 4G lenta
+As medições abaixo foram feitas em 31/10/2026 no site publicado, depois da limpeza do CSS e da
+correção dos rótulos (o CI não repete medições no site publicado). Lighthouse 13.6; no celular, rede 4G lenta
 simulada e mediana de três medições. Os números variam entre execuções: use os comandos abaixo
 para medir de novo.
 
@@ -130,23 +132,23 @@ para medir de novo.
 | Cabeçalhos de segurança                | Mozilla HTTP Observatory                              | A+ (12 de 12 testes)                                |
 | Configuração publicada x `vercel.json` | `scripts/verify-security-headers.mjs`                 | 20 de 20 itens                                      |
 | Dependências                           | `npm audit`                                           | Nenhuma vulnerabilidade conhecida                   |
-| Desempenho                             | Lighthouse                                            | Computador 100, celular 99 (mediana; 98 a 100)      |
+| Desempenho                             | Lighthouse                                            | Computador 100, celular 100 (mediana; 98 a 100)     |
 | Acessibilidade, boas práticas e SEO    | Lighthouse                                            | 100 nas três categorias, no celular e no computador |
-| Acessibilidade (WCAG 2.2 A e AA)       | axe-core, com todas as seções renderizadas            | Nenhuma violação nas 3 páginas                      |
+| Acessibilidade (WCAG 2.2 A e AA)       | axe-core, seção por seção, com a seção na tela        | Nenhuma violação nas 3 páginas                      |
 | Layout                                 | Chromium automatizado, 15 resoluções de 320 a 2560 px | 48 testes sem falhas (inclui axe)                   |
 
 Métricas do Lighthouse:
 
 | Métrica                  | Celular | Computador | Limite recomendado |
 | ------------------------ | ------- | ---------- | ------------------ |
-| First Contentful Paint   | 1,2 s   | 0,3 s      | até 1,8 s          |
-| Largest Contentful Paint | 1,2 s   | 0,5 s      | até 2,5 s          |
-| Total Blocking Time      | 125 ms  | 23 ms      | até 200 ms         |
+| First Contentful Paint   | 1,1 s   | 0,3 s      | até 1,8 s          |
+| Largest Contentful Paint | 1,1 s   | 0,5 s      | até 2,5 s          |
+| Total Blocking Time      | 71 ms   | 0 ms       | até 200 ms         |
 | Cumulative Layout Shift  | 0       | 0          | até 0,1            |
-| Peso da página           | 276 KB  | 334 KB     | n/a                |
+| Peso da página           | 272 KB  | 331 KB     | n/a                |
 | Requisições              | 11      | 13         | n/a                |
 
-O Total Blocking Time no celular oscilou entre 73 e 165 ms nas três medições; todas ficaram
+O Total Blocking Time no celular oscilou entre 58 e 143 ms nas três medições; todas ficaram
 dentro do limite.
 
 Para reproduzir:
