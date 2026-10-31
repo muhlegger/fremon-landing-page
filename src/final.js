@@ -487,6 +487,11 @@ const memory = document.querySelector("[data-memory]");
 if (memory) {
   const START = 2014;
   const NOW = 2026;
+  // Ritmo do filme "doze anos de um prédio": tempo por ano, pausa no "hoje" sem o Fremon e
+  // espera até a cena assentar depois que o acervo devolve tudo.
+  const FILM_MS_PER_YEAR = 360;
+  const FILM_PAUSE_MS = 1200;
+  const FILM_SETTLE_MS = 1100;
   const items = [...memory.querySelectorAll(".mem-item")];
   const past = items.filter((item) => item.dataset.year);
   const due = items.filter((item) => !item.dataset.year);
@@ -663,8 +668,8 @@ if (memory) {
 
   const flash = (column) => {
     column.classList.add("is-handover");
-    // Some antes da próxima troca (a cada 1,1 s), para os rótulos não se encostarem.
-    later(() => column.classList.remove("is-handover"), 750);
+    // Some antes da próxima troca (a cada 0,72 s), para os rótulos não se encostarem.
+    later(() => column.classList.remove("is-handover"), 500);
   };
 
   const play = () => {
@@ -674,7 +679,7 @@ if (memory) {
     setMode("sem");
     render(START);
     let stage = 0;
-    const duration = (NOW - START) * 560;
+    const duration = (NOW - START) * FILM_MS_PER_YEAR;
     const begin = performance.now();
     const tick = (now) => {
       const progress = Math.min(1, (now - begin) / duration);
@@ -692,8 +697,8 @@ if (memory) {
       // Pausa no "hoje" sem o Fremon; depois o acervo devolve tudo.
       later(() => {
         setMode("com", { wave: true });
-        later(settle, 1500);
-      }, 1800);
+        later(settle, FILM_SETTLE_MS);
+      }, FILM_PAUSE_MS);
     };
     frame = requestAnimationFrame(tick);
   };
@@ -732,7 +737,7 @@ if (memory) {
       (entries) => {
         if (!entries.at(-1).isIntersecting) return;
         observer.disconnect();
-        later(play, 500);
+        later(play, 300);
       },
       { threshold: 0.3 },
     );
