@@ -1,6 +1,7 @@
 # Fremon — landing page
 
 [![Site no ar](https://img.shields.io/badge/site-www.fremon.com.br-002A5E)](https://www.fremon.com.br)
+[![CI](https://github.com/muhlegger/fremon-landing-page/actions/workflows/ci.yml/badge.svg)](https://github.com/muhlegger/fremon-landing-page/actions/workflows/ci.yml)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
 ![Vercel](https://img.shields.io/badge/deploy-Vercel-000?logo=vercel)
 
@@ -44,6 +45,8 @@ src/final.css, final.js          Estilos e comportamento da landing
 src/legal.js                     Comportamento das páginas legais
 public/                          Mídia, favicon e arquivos servidos como estão
 scripts/verify-security-headers.mjs   Confere os headers do site publicado
+tests/                           Testes de layout (15 resoluções) e acessibilidade (axe-core)
+.github/workflows/ci.yml         CI: npm audit, build e testes
 vite.config.js                   Build: SEO, preload de fontes, poda de mídia
 vercel.json                      Headers de segurança e redirecionamentos
 ```
@@ -57,7 +60,10 @@ npm install
 npm run dev        # http://localhost:5173
 npm run build      # gera dist/
 npm run preview    # serve o dist/ localmente
+npm test           # build + testes de layout e acessibilidade (Playwright)
 ```
+
+Na primeira vez, `npx playwright install chromium` baixa o navegador usado nos testes.
 
 ## Configuração do build
 
@@ -94,9 +100,17 @@ node scripts/verify-security-headers.mjs https://www.fremon.com.br
 
 O script sai com erro se algum header publicado divergir do `vercel.json`.
 
-## Qualidade
+## Testes e qualidade
 
-Verificações feitas em 30/10/2026 na versão publicada (Lighthouse 12; no celular, rede 4G lenta
+O CI ([`ci.yml`](./.github/workflows/ci.yml)) roda a cada push: `npm audit`, build e `npm test`.
+Os testes (Playwright + axe-core) rodam contra o build local, nunca contra o site publicado:
+
+- **Layout:** as 3 páginas em 15 resoluções, de 320 a 2560 px, com emulação de toque nos celulares
+  e tablets. Falham se houver rolagem lateral, imagem quebrada, erro de console ou requisição
+  que falhe.
+- **Acessibilidade:** axe-core com WCAG 2.2 A e AA, depois de renderizar todas as seções.
+
+As medições abaixo foram feitas no site publicado, que o CI não repete: 30/10/2026 (Lighthouse 12; no celular, rede 4G lenta
 simulada e mediana de três medições). Os números mudam com o conteúdo: use os comandos abaixo
 para medir de novo.
 

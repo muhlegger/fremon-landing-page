@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Só lê o repositório. Não há deploy nem segredos: o site é publicado manualmente na Vercel.
+permissions:
+  contents: read
+
+jobs:
+  verificacoes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Auditoria de dependências
+        run: npm audit --audit-level=moderate
+
+      - name: Instalar o Chromium do Playwright
+        run: npx playwright install --with-deps chromium
+
+      # Gera o build, sobe o preview local e roda os testes de layout e acessibilidade.
+      - name: Testes
+        run: npm test
