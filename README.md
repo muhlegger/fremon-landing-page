@@ -110,8 +110,9 @@ Os testes (Playwright + axe-core) rodam contra o build local, nunca contra o sit
   que falhe.
 - **Acessibilidade:** axe-core com WCAG 2.2 A e AA, depois de renderizar todas as seções.
 
-As medições abaixo foram feitas no site publicado, que o CI não repete: 30/10/2026 (Lighthouse 12; no celular, rede 4G lenta
-simulada e mediana de três medições). Os números mudam com o conteúdo: use os comandos abaixo
+As medições abaixo foram feitas em 31/10/2026 no site publicado, depois da correção dos rótulos
+de link (o CI não repete medições no site publicado). Lighthouse 13.6; no celular, rede 4G lenta
+simulada e mediana de três medições. Os números variam entre execuções: use os comandos abaixo
 para medir de novo.
 
 | Verificação | Ferramenta | Resultado |
@@ -119,30 +120,30 @@ para medir de novo.
 | Cabeçalhos de segurança | Mozilla HTTP Observatory | A+ (12 de 12 testes) |
 | Configuração publicada x `vercel.json` | `scripts/verify-security-headers.mjs` | 20 de 20 itens |
 | Dependências | `npm audit` | Nenhuma vulnerabilidade conhecida |
-| Recursos de terceiros | Análise das requisições da página | Nenhum |
-| Desempenho | Lighthouse | Computador 100, celular 98 |
+| Desempenho | Lighthouse | Computador 100, celular 99 (mediana; 98 a 100) |
 | Acessibilidade, boas práticas e SEO | Lighthouse | 100 nas três categorias, no celular e no computador |
 | Acessibilidade (WCAG 2.2 A e AA) | axe-core, com todas as seções renderizadas | Nenhuma violação nas 3 páginas |
-| Layout | Chromium automatizado, 15 resoluções de 320 a 2560 px | Sem rolagem lateral, imagem quebrada ou erro de console |
+| Layout | Chromium automatizado, 15 resoluções de 320 a 2560 px | 48 testes sem falhas (inclui axe) |
 
 Métricas do Lighthouse:
 
 | Métrica | Celular | Computador | Limite recomendado |
 | --- | --- | --- | --- |
 | First Contentful Paint | 1,2 s | 0,3 s | até 1,8 s |
-| Largest Contentful Paint | 2,4 s | 0,5 s | até 2,5 s |
-| Total Blocking Time | 30 ms | 0 ms | até 200 ms |
+| Largest Contentful Paint | 1,2 s | 0,5 s | até 2,5 s |
+| Total Blocking Time | 125 ms | 23 ms | até 200 ms |
 | Cumulative Layout Shift | 0 | 0 | até 0,1 |
-| Peso da página | 276 KB | 335 KB | n/a |
+| Peso da página | 276 KB | 334 KB | n/a |
 | Requisições | 11 | 13 | n/a |
 
-No celular o LCP fica perto do limite: o maior elemento é o título, que é redesenhado quando
-a fonte da marca termina de carregar na rede 4G simulada.
+O Total Blocking Time no celular oscilou entre 73 e 165 ms nas três medições; todas ficaram
+dentro do limite.
 
 Para reproduzir:
 
 ```bash
 npm audit
+BASE_URL=https://www.fremon.com.br npm test      # layout e axe-core no site publicado
 node scripts/verify-security-headers.mjs https://www.fremon.com.br
 npx lighthouse https://www.fremon.com.br --preset=desktop --view
 npx lighthouse https://www.fremon.com.br --view          # perfil de celular (padrão)
