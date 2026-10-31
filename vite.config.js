@@ -72,10 +72,9 @@ function preloadFonts() {
   };
 }
 
-// Tudo o que está em public/ entra no build, mas as fotos e telas usadas só pelas páginas de
-// estudo não precisam ir ao ar (algumas são imagens geradas sem o rótulo "ilustrativa").
-// Depois do build, sai do dist toda mídia que nenhuma página publicada referencia no HTML,
-// CSS ou JS. Uma imagem montada por concatenação no JS seria removida: referencie o caminho inteiro.
+// Tudo o que está em public/ entra no build. Depois do build, sai do dist toda mídia que nenhuma
+// página publicada referencia no HTML, CSS ou JS, para um arquivo esquecido em public/ não ir ao ar.
+// Uma imagem montada por concatenação no JS seria removida: referencie o caminho inteiro.
 const MEDIA_DIRS = ["assets/brand", "assets/og", "assets/photos", "assets/product"];
 
 function publishOnlyUsedMedia() {
@@ -105,11 +104,9 @@ function publishOnlyUsedMedia() {
   };
 }
 
-// O build de produção publica a landing page e as páginas legais (Política de Privacidade e
-// Termos de Serviço, nos mesmos endereços do site anterior). As páginas de estudo —
-// prototipo/, concepts/, comparison/ e premium-concept/ — continuam abertas no `npm run dev`,
-// mas não vão para o ar: duas delas usam script/estilo inline, que a CSP do vercel.json
-// bloqueia, e nenhuma deve ser indexada.
+// O build publica as páginas de PAGES: a landing page e as páginas legais (Política de
+// Privacidade e Termos de Serviço, nos mesmos endereços do site anterior). robots.txt e
+// sitemap.xml são gerados pelo plugin de SEO; não há cópia deles em public/.
 export default defineConfig(({ mode }) => {
   const env = { ...SEO_DEFAULTS, ...loadEnv(mode, process.cwd(), "VITE_") };
 

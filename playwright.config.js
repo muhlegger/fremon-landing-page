@@ -1,10 +1,10 @@
 import { defineConfig } from "@playwright/test";
 
-// Os testes rodam contra o build local (vite preview), nunca contra o site publicado:
-// assim testam o código do commit e não geram tráfego no domínio do cliente.
+// Por padrão os testes rodam contra o build local (vite preview): testam o código do commit e
+// não geram tráfego no domínio do cliente. O CI usa sempre esse modo.
 const PORT = 4173;
 
-// Para medir o site publicado em vez do build local: BASE_URL=https://www.fremon.com.br npm test
+// Para medir o site publicado, rode à mão: BASE_URL=https://www.fremon.com.br npm test
 const REMOTE = process.env.BASE_URL;
 
 export default defineConfig({

@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#101518" />
     <meta name="description" content="Plano de manutenção (NBR 5674), AVCB, laudos, reformas e documentos do condomínio em um só lugar. Feito para síndicos, com a engenharia da FREMASA." />
     <!-- SEO: as URLs absolutas saem de VITE_SITE_URL e a indexação de VITE_ROBOTS (vite.config.js).
-         Em preview o padrão é a URL da Vercel com "noindex, nofollow"; para publicar no domínio final:
-         VITE_SITE_URL=https://dominio-final VITE_ROBOTS="index, follow" npm run build -->
+         Sem VITE_ROBOTS, o build sai com "noindex, nofollow", para um preview nunca ser indexado.
+         Em produção: VITE_ROBOTS="index, follow" npm run build -->
     <meta name="robots" content="%VITE_ROBOTS%" />
     <link rel="canonical" href="%VITE_SITE_URL%/" />
     <meta property="og:type" content="website" />

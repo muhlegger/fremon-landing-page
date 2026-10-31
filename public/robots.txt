@@ -1,4 +1,0 @@
-# Rascunho em preview — não indexar.
-# Ao publicar no domínio final, trocar por "Allow: /" e reativar a linha Sitemap.
-User-agent: *
-Disallow: /
