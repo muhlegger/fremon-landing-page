@@ -63,9 +63,9 @@ function preloadFonts() {
     transformIndexHtml: {
       order: "post",
       handler: (html, ctx) => {
-        const files = Object.keys(ctx.bundle ?? {}).filter((name) =>
-          PRELOAD_FONTS.some((pattern) => pattern.test(name)),
-        );
+        // Na ordem de PRELOAD_FONTS: a ordem das chaves do bundle muda de um build para outro.
+        const names = Object.keys(ctx.bundle ?? {});
+        const files = PRELOAD_FONTS.map((pattern) => names.find((name) => pattern.test(name))).filter(Boolean);
         return files.map((file) => ({
           tag: "link",
           attrs: { rel: "preload", href: `/${file}`, as: "font", type: "font/woff2", crossorigin: "" },
