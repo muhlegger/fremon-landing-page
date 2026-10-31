@@ -1,0 +1,9 @@
+dist/
+test-results/
+playwright-report/
+package-lock.json
+public/
+
+# O HTML é formatado à mão: entre elementos inline, um espaço ou uma quebra de linha muda o
+# texto exibido e o nome acessível dos links, então o Prettier não reflui essas páginas.
+*.html
