@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101518" />
+    <meta name="description" content="Plano de manutenção (NBR 5674), AVCB, laudos, reformas e documentos do condomínio em um só lugar. Feito para síndicos, com a engenharia da FREMASA." />
+    <!-- SEO: as URLs absolutas saem de VITE_SITE_URL e a indexação de VITE_ROBOTS (vite.config.js).
+         Em preview o padrão é a URL da Vercel com "noindex, nofollow"; para publicar no domínio final:
+         VITE_SITE_URL=https://dominio-final VITE_ROBOTS="index, follow" npm run build -->
+    <meta name="robots" content="%VITE_ROBOTS%" />
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Fremon" />
+    <meta property="og:title" content="Fremon: o prédio inteiro sob controle" />
+    <meta property="og:description" content="Manutenção, obrigações legais, reformas e documentos do condomínio organizados para o síndico, com a engenharia da FREMASA por trás. Faça o diagnóstico do seu prédio em 1 minuto." />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/assets/og/fremon-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Painel do condomínio no Fremon ao lado do título: o seu prédio inteiro, sob controle" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fremon: o prédio inteiro sob controle" />
+    <meta name="twitter:description" content="Manutenção, obrigações legais, reformas e documentos do condomínio organizados para o síndico, com a engenharia da FREMASA por trás. Faça o diagnóstico do seu prédio em 1 minuto." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/assets/og/fremon-og.jpg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/assets/brand/fremon-symbol.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="/assets/brand/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="icon" href="/assets/brand/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+    <link rel="preload" as="image" type="image/webp" imagesrcset="/assets/photos/final/fachada-hero-1280.webp 1280w, /assets/photos/final/fachada-hero-1920.webp 1920w, /assets/photos/final/fachada-hero-2500.webp 2500w" imagesizes="(max-width: 1050px) 100vw, 64vw" fetchpriority="high" />
+    <title>Fremon: gestão de manutenção predial para síndicos</title>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "%VITE_SITE_URL%/#organizacao",
+      "name": "Fremon",
+      "url": "%VITE_SITE_URL%/",
+      "logo": "%VITE_SITE_URL%/assets/brand/fremon-logo-512.png",
+      "email": "leandro@fremasa.com.br",
+      "telephone": "+55-11-97337-7172",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "FREMASA Engenharia",
+        "url": "https://fremasa.com.br/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "%VITE_SITE_URL%/#site",
+      "url": "%VITE_SITE_URL%/",
+      "name": "Fremon",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "%VITE_SITE_URL%/#organizacao"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "%VITE_SITE_URL%/#fremon",
+      "name": "Fremon",
+      "url": "%VITE_SITE_URL%/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Plano de manutenção (NBR 5674), AVCB, laudos, reformas e documentos do condomínio em um só lugar. Feito para síndicos, com a engenharia da FREMASA.",
+      "inLanguage": "pt-BR",
+      "image": "%VITE_SITE_URL%/assets/og/fremon-og.jpg",
+      "publisher": {
+        "@id": "%VITE_SITE_URL%/#organizacao"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Archive",
+          "description": "A memória técnica deixa de depender de pastas e pessoas. Valor-base mensal de referência. a partir de R$ 249.",
+          "price": "249",
+          "priceCurrency": "BRL",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "249",
+            "priceCurrency": "BRL",
+            "unitText": "mês"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Compliance",
+          "description": "Documentação e manutenção preventiva sob a mesma rotina. Valor-base mensal de referência. a partir de R$ 449.",
+          "price": "449",
+          "priceCurrency": "BRL",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "449",
+            "priceCurrency": "BRL",
+            "unitText": "mês"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Intelligence",
+          "description": "A plataforma conectada à leitura técnica para decisões mais seguras. Valor-base mensal de referência. a partir de R$ 890.",
+          "price": "890",
+          "priceCurrency": "BRL",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "890",
+            "priceCurrency": "BRL",
+            "unitText": "mês"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Black",
+          "description": "Mais presença. acompanhamento e apoio sobre a operação técnica. Valor-base mensal de referência. a partir de R$ 1.290.",
+          "price": "1290",
+          "priceCurrency": "BRL",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "1290",
+            "priceCurrency": "BRL",
+            "unitText": "mês"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "%VITE_SITE_URL%/#perguntas",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Faz sentido para um condomínio só?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O Fremon foi desenhado a partir do prédio: cada condomínio tem o seu painel, os seus sistemas, prazos e documentos. A visão de carteira é um complemento para quem cuida de vários."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Fremon substitui a administradora do condomínio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O Fremon cria a infraestrutura de governança técnica que conecta síndico, administradora, engenharia e fornecedores. Ele complementa a gestão administrativa com controle técnico e continuidade da informação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso ter todos os documentos organizados para começar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A implantação existe para estruturar o ponto de partida, identificar lacunas e definir prioridades. O acervo pode ganhar qualidade progressivamente dentro de uma lógica única."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funciona no celular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O Fremon roda no navegador, no computador ou no celular, sem instalar nada. O síndico acompanha o prédio de onde estiver."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quem do condomínio pode acessar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada pessoa entra com o próprio perfil (síndico, administradora, engenharia, profissional técnico ou proprietário) e vê e faz apenas o que cabe ao seu papel. Os acessos são criados de forma centralizada pela equipe Fremon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Consigo gerenciar mais de um condomínio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A visão de portfólio foi pensada para síndicos profissionais, administradoras e operações com múltiplas entidades, mantendo o detalhamento de cada patrimônio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é a diferença entre a plataforma e a Gestão Ativa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A plataforma organiza e torna a operação rastreável. A Gestão Ativa adiciona uma equipe que visita, registra, prioriza, apoia e acompanha demandas usando o próprio Fremon como ambiente de trabalho."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Gestão Ativa executa todas as manutenções?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Sua função é governar, organizar e acompanhar a operação técnica. Empresas especializadas e fornecedores continuam responsáveis pelas execuções contratadas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como escolher o plano correto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A recomendação considera maturidade do acervo, porte, quantidade de entidades e nível de apoio desejado. A demonstração inclui uma leitura inicial para evitar contratação acima ou abaixo da necessidade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Fremon atende residências de alto padrão?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O Fremon Private adapta a lógica de acervo, manutenção preventiva e memória técnica para propriedades residenciais que exigem discrição e preservação patrimonial."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="site-header" data-site-header>
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Fremon, página inicial">
+          <img src="/assets/brand/fremon-symbol.svg" alt="" width="42" height="42" />
+          <span class="brand-copy">
+            <strong>Fremon</strong>
+            <small>Governança técnica</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="#plataforma">Plataforma</a>
+          <a href="#engenharia">Engenharia</a>
+          <a href="#diagnostico">Diagnóstico</a>
+          <a href="#gestao-ativa">Gestão Ativa</a>
+          <a href="#planos">Planos</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="text-link header-login" href="https://app.fremon.com.br/login" target="_blank" rel="noreferrer">
+            Acessar plataforma
+          </a>
+          <a class="button button--small button--light" href="#contato">Agendar apresentação</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+          aria-label="Abrir menu"
+          data-menu-toggle
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-navigation" aria-label="Navegação móvel" data-mobile-nav hidden>
+        <div class="container mobile-nav-inner">
+          <p class="mobile-guide-title">Guia da página</p>
+          <ol class="mobile-guide">
+            <li><a href="#continuidade" data-guide-link><span>01</span>A memória do prédio</a></li>
+            <li><a href="#plataforma" data-guide-link><span>02</span>A plataforma por dentro</a></li>
+            <li><a href="#raio-x" data-guide-link><span>03</span>Raio-X do edifício</a></li>
+            <li><a href="#modulos" data-guide-link><span>04</span>Tudo conectado</a></li>
+            <li><a href="#engenharia" data-guide-link><span>05</span>A engenharia por trás</a></li>
+            <li><a href="#custo-de-adiar" data-guide-link><span>06</span>Quanto custa adiar</a></li>
+            <li><a href="#diagnostico" data-guide-link><span>07</span>Diagnóstico em 1 minuto</a></li>
+            <li><a href="#gestao-ativa" data-guide-link><span>08</span>Gestão Ativa</a></li>
+            <li><a href="#planos" data-guide-link><span>09</span>Planos</a></li>
+            <li><a href="#perguntas" data-guide-link><span>10</span>Perguntas frequentes</a></li>
+          </ol>
+          <div class="mobile-nav-actions">
+            <a class="button button--primary" href="#contato">Agendar apresentação</a>
+            <a class="mobile-nav-login" href="https://app.fremon.com.br/login" target="_blank" rel="noreferrer">Acessar plataforma ↗</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="/assets/photos/final/fachada-hero-1920.webp" srcset="/assets/photos/final/fachada-hero-1280.webp 1280w, /assets/photos/final/fachada-hero-1920.webp 1920w, /assets/photos/final/fachada-hero-2500.webp 2500w" sizes="(max-width: 1050px) 100vw, 64vw" alt="" width="2500" height="1364" fetchpriority="high" />
+          <div class="hero-media-grid"></div>
+        </div>
+
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow--inverse">
+              <span></span>
+              Gestão técnica e manutenção predial para condomínios
+            </p>
+            <h1 id="hero-title">
+              Governança técnica para patrimônios que não podem depender do
+              <em>improviso.</em>
+            </h1>
+            <p class="hero-intro">
+              Para o síndico que responde pelo prédio: projetos, documentos, obrigações, manutenções,
+              reformas e histórico do seu condomínio em uma operação organizada e rastreável,
+              desenvolvida a partir da experiência real de engenharia do Grupo FREMASA.
+            </p>
+            <div class="button-row">
+              <a class="button button--primary" href="#plataforma">
+                Ver o Fremon em funcionamento
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="button button--ghost" href="#diagnostico">Fazer o diagnóstico em 1 minuto</a>
+            </div>
+            <div class="hero-assurance" role="list" aria-label="Diferenciais do Fremon">
+              <span role="listitem">Engenharia aplicada</span>
+              <span role="listitem">Memória permanente</span>
+              <span role="listitem">Decisões rastreáveis</span>
+            </div>
+          </div>
+
+          <div class="hero-product reveal" data-reveal-delay="2">
+            <div class="building-marker building-marker--top" aria-hidden="true">
+              <span class="marker-line"></span>
+              <small>SEU CONDOMÍNIO</small>
+              <strong>59 itens · 90% sem atraso</strong>
+            </div>
+            <div class="building-marker building-marker--side" aria-hidden="true">
+              <span class="marker-line"></span>
+              <small>MEMÓRIA TÉCNICA</small>
+              <strong>Centralizada</strong>
+            </div>
+
+            <div class="product-window product-window--hero">
+              <div class="shot-bar shot-bar--hero" aria-hidden="true"><i></i><i></i><i></i><span>app.fremon.com.br/condominio</span></div>
+              <div class="window-body window-body--shot">
+                <img src="/assets/product/final/hero-760.webp" srcset="/assets/product/final/hero-380.webp 380w, /assets/product/final/hero-560.webp 560w, /assets/product/final/hero-760.webp 760w, /assets/product/final/hero-950.webp 950w, /assets/product/final/hero-1140.webp 1140w, /assets/product/final/hero-1520.webp 1520w, /assets/product/final/hero-1900.webp 1900w, /assets/product/final/hero-2280.webp 2280w" sizes="(max-width: 800px) calc(100vw - 40px), (max-width: 1050px) 760px, 1140px" alt="Painel do condomínio no Fremon, visto pelo síndico: foto do edifício, situação do plano de manutenção, trabalho realizado e o que exige atenção agora" width="1280" height="800" fetchpriority="high" />
+              </div>
+              <span class="interface-note">Interface do Fremon · dados demonstrativos</span>
+            </div>
+
+            <figure class="shot-detail shot-detail--hero" aria-hidden="true">
+              <img src="/assets/product/final/hero-corte-200.webp" srcset="/assets/product/final/hero-corte-200.webp 200w, /assets/product/final/hero-corte-250.webp 250w, /assets/product/final/hero-corte-300.webp 300w, /assets/product/final/hero-corte-400.webp 400w, /assets/product/final/hero-corte-600.webp 600w" sizes="198px" alt="" width="461" height="462" decoding="async" />
+            </figure>
+
+            <div class="hero-product-caption" aria-hidden="true">
+              <span>01</span>
+              <p>O seu prédio,<br />traduzido em controle digital.</p>
+            </div>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#autoridade" aria-label="Continuar para resultados">
+          <span></span> Continuar
+        </a>
+      </section>
+
+      <section class="authority-strip" id="autoridade" aria-labelledby="authority-title">
+        <div class="container">
+          <div class="authority-intro reveal">
+            <p class="eyebrow"><span></span> Origem técnica comprovada</p>
+            <h2 id="authority-title">Tecnologia nascida dentro da engenharia.</h2>
+            <p>
+              Experiência acumulada pelo Grupo FREMASA e transformada em método, dados e rotina no Fremon.
+            </p>
+          </div>
+          <dl class="authority-metrics">
+            <div class="metric reveal">
+              <dt><span data-counter="600">600</span><sup>+</sup></dt>
+              <dd>condomínios atendidos</dd>
+            </div>
+            <div class="metric reveal" data-reveal-delay="1">
+              <dt><span data-counter="12000">12.000</span><sup>+</sup></dt>
+              <dd>unidades beneficiadas</dd>
+            </div>
+            <div class="metric reveal" data-reveal-delay="2">
+              <dt><sup>R$</sup> <span data-counter="103">103</span> <sup>mi</sup></dt>
+              <dd>em obras gerenciadas</dd>
+            </div>
+            <div class="metric metric--accent reveal" data-reveal-delay="3">
+              <dt><span data-counter="40">40</span><sup>%</sup></dt>
+              <dd>de redução em custos reativos</dd>
+            </div>
+          </dl>
+          <div class="authority-foot">
+            <p class="data-scope">Dados de experiência e operações do Grupo FREMASA que deram origem ao Fremon.</p>
+            <a class="origin-link" href="https://fremasa.com.br/" target="_blank" rel="noopener" aria-label="Conhecer a FREMASA Engenharia (abre em nova aba)">
+              <span>Uma tecnologia com origem no</span>
+              <span class="origin-logo"><img class="origin-logo-dark" src="/assets/brand/fremasa-logo-escuro.png" alt="" width="150" height="55" loading="lazy" /><img class="origin-logo-light" src="/assets/brand/fremasa-logo.png" alt="" width="150" height="55" loading="lazy" /></span>
+              <em>Conheça a engenharia por trás do Fremon <i aria-hidden="true">↗</i></em>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section memory-section" id="continuidade" aria-labelledby="memory-title">
+        <div class="container">
+          <div class="section-heading section-heading--split reveal">
+            <div>
+              <p class="eyebrow"><span></span> Continuidade da gestão</p>
+              <h2 id="memory-title">O edifício permanece. <em>A memória técnica também precisa permanecer.</em></h2>
+            </div>
+            <p>
+              O mandato do síndico é de até dois anos, e administradoras e fornecedores também mudam. Quando documentos, decisões e prazos ficam com as pessoas, cada troca leva embora um pedaço do contexto para decidir.
+            </p>
+          </div>
+
+          <!-- Doze anos de um prédio, gestão a gestão. O HTML já traz o estado "com o Fremon";
+               o JS esvazia a linha do tempo e conta a história quando ela entra na tela. -->
+          <div class="mem reveal" data-memory data-mode="com">
+            <div class="mem-head">
+              <div class="mem-intro">
+                <p class="mem-title">Doze anos de um prédio, gestão a gestão</p>
+                <div class="mem-controls">
+                  <div class="mem-switch" role="group" aria-label="Comparar o histórico do prédio">
+                    <button type="button" data-memory-mode="sem" aria-pressed="false"><i aria-hidden="true"></i>Sem o Fremon</button>
+                    <button type="button" data-memory-mode="com" aria-pressed="true"><i aria-hidden="true"></i>Com o Fremon</button>
+                  </div>
+                  <button class="mem-replay" type="button" data-memory-replay><span aria-hidden="true">↺</span> Ver a história de novo</button>
+                </div>
+              </div>
+              <div class="mem-count">
+                <div>
+                  <p class="mem-count-label">Quem decide hoje encontra</p>
+                  <p class="mem-count-value"><strong data-memory-found>24</strong> de <span data-memory-total>24</span></p>
+                  <p class="mem-count-sub"><span>registros do prédio</span><span data-memory-next>e 4 prazos já no calendário</span></p>
+                </div>
+                <figure class="mem-spark" aria-hidden="true">
+                  <svg viewBox="0 0 240 64" focusable="false">
+                    <path class="mem-spark-base" d="M2 58H238" />
+                    <path class="mem-spark-com" data-spark-com pathLength="1" d="" />
+                    <path class="mem-spark-sem" data-spark-sem d="" />
+                    <circle class="mem-spark-dot" data-spark-dot r="3.5" cx="238" cy="8" />
+                  </svg>
+                  <figcaption><span>2014</span><span>Hoje</span></figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="mem-track">
+              <span class="mem-now" aria-hidden="true"><b data-memory-year>Hoje</b></span>
+              <ol class="mem-cols">
+                <li class="mem-col">
+                  <p class="mem-col-head"><b>2014 a 2016</b><span>1º síndico</span></p>
+                  <ul class="mem-items">
+                    <li><button type="button" class="mem-item" data-type="doc" data-year="2014.2" data-lost="2016" aria-pressed="false" aria-controls="mem-file" data-com="Arquitetura, estrutura e instalações como foram construídas: a base para avaliar qualquer reforma." data-sem="Ficaram numa caixa com o 1º síndico. As reformas seguintes foram avaliadas sem eles."><span class="mem-kind">Projetos · 2014</span><span class="mem-where">Caixa do 1º síndico</span><span class="mem-name">Projetos da obra</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="doc" data-year="2014.6" aria-pressed="false" aria-controls="mem-file" data-com="Uso, operação e manutenção de cada sistema, com os prazos de garantia da construtora." data-sem="Sobrou uma cópia impressa na portaria, sem nenhuma atualização desde a entrega."><span class="mem-kind">Manual · 2014</span><span class="mem-where">Cópia impressa</span><span class="mem-name">Manual do edifício</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="obra" data-year="2015.2" data-lost="2016" data-memory-default aria-pressed="false" aria-controls="mem-file" data-com="Cobertura refeita, com o termo de garantia de 5 anos no acervo. Em 2019, a garantia pagou o reparo de uma infiltração." data-sem="O termo de garantia ficou no e-mail do 1º síndico. Em 2019, o condomínio pagou um reparo que estava coberto."><span class="mem-kind">Obra · 2015</span><span class="mem-where">E-mail do 1º síndico</span><span class="mem-name">Impermeabilização</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="contrato" data-year="2015.6" data-lost="2020" aria-pressed="false" aria-controls="mem-file" data-com="Contrato de manutenção, chamados e peças trocadas desde a entrega do prédio." data-sem="Foi embora com a administradora anterior, na troca de 2020."><span class="mem-kind">Contrato · 2015</span><span class="mem-where">Ex-administradora</span><span class="mem-name">Elevadores</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                  </ul>
+                </li>
+                <li class="mem-col">
+                  <span class="mem-swap" aria-hidden="true">Troca de gestão</span>
+                  <p class="mem-col-head"><b>2016 a 2018</b><span>2ª síndica</span></p>
+                  <ul class="mem-items">
+                    <li><button type="button" class="mem-item" data-type="obrigacao" data-year="2016.3" data-lost="2018" aria-pressed="false" aria-controls="mem-file" data-com="Medição e laudo do sistema de para-raios, com a próxima inspeção no calendário." data-sem="Só a empresa que fez a medição tem a cópia do laudo."><span class="mem-kind">Laudo · 2016</span><span class="mem-where">Com o fornecedor</span><span class="mem-name">Para-raios (SPDA)</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="manutencao" data-year="2016.9" data-lost="2018" aria-pressed="false" aria-controls="mem-file" data-com="Conjunto motobomba trocado, com nota fiscal e garantia do fornecedor." data-sem="A nota fiscal e a garantia ficaram numa conversa de WhatsApp."><span class="mem-kind">Manutenção · 2016</span><span class="mem-where">WhatsApp</span><span class="mem-name">Bombas de recalque</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="obrigacao" data-year="2017.3" data-lost="2020" aria-pressed="false" aria-controls="mem-file" data-com="Auto de vistoria renovado, com o processo completo guardado para a próxima renovação." data-sem="O processo de renovação ficou na pasta da administradora anterior."><span class="mem-kind">Obrigação · 2017</span><span class="mem-where">Ex-administradora</span><span class="mem-name">AVCB</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="contrato" data-year="2017.7" aria-pressed="false" aria-controls="mem-file" data-com="A assembleia aprova o fundo para a fachada, com os orçamentos que embasaram a decisão." data-sem="A ata está no livro, mas os orçamentos que embasaram a decisão sumiram."><span class="mem-kind">Ata · 2017</span><span class="mem-where">Livro de atas</span><span class="mem-name">Fundo de obras</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                  </ul>
+                </li>
+                <li class="mem-col">
+                  <span class="mem-swap" aria-hidden="true">Troca de gestão</span>
+                  <p class="mem-col-head"><b>2018 a 2020</b><span>3º síndico</span></p>
+                  <ul class="mem-items">
+                    <li><button type="button" class="mem-item" data-type="manutencao" data-year="2018.4" data-lost="2020" aria-pressed="false" aria-controls="mem-file" data-com="Limpezas semestrais com laudo de potabilidade, uma depois da outra." data-sem="Certificados soltos numa gaveta da portaria: o histórico se perdeu."><span class="mem-kind">Manutenção · 2018</span><span class="mem-where">Gaveta da portaria</span><span class="mem-name">Caixas-d'água</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="obra" data-year="2019.0" data-lost="2020" aria-pressed="false" aria-controls="mem-file" data-com="Responsável técnico, documentos exigidos e aprovação da engenharia, tudo registrado." data-sem="Quem aprovou? O que mudou nas paredes? Ficou no e-mail do 3º síndico."><span class="mem-kind">Reforma · 2019</span><span class="mem-where">E-mail do 3º síndico</span><span class="mem-name">Reforma do apto 82</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="manutencao" data-year="2019.4" data-lost="2020" aria-pressed="false" aria-controls="mem-file" data-com="Reparo feito pela garantia da impermeabilização, sem custo para o condomínio." data-sem="Pago pelo condomínio: ninguém sabia que a garantia cobria."><span class="mem-kind">Manutenção · 2019</span><span class="mem-where">WhatsApp</span><span class="mem-name">Infiltração no 12º</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="obrigacao" data-year="2019.8" data-lost="2020" aria-pressed="false" aria-controls="mem-file" data-com="Laudo da engenharia, com os apontamentos em ordem de prioridade." data-sem="Um PDF de 40 páginas no e-mail de quem saiu."><span class="mem-kind">Laudo · 2019</span><span class="mem-where">PDF no e-mail</span><span class="mem-name">Inspeção predial</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                  </ul>
+                </li>
+                <li class="mem-col" data-boundary="2020">
+                  <span class="mem-swap" aria-hidden="true">Troca de gestão e de administradora</span>
+                  <span class="mem-callout" data-callout="4" aria-hidden="true">04</span>
+                  <p class="mem-col-head"><b>2020 a 2022</b><span>4ª síndica</span><span class="mem-col-note">Nova administradora</span></p>
+                  <ul class="mem-items">
+                    <li><button type="button" class="mem-item" data-type="obra" data-year="2020.5" data-lost="2022" aria-pressed="false" aria-controls="mem-file" data-com="Fachada recuperada, com garantia e fotos de antes e depois." data-sem="Contrato e garantia ficaram no e-mail da 4ª síndica."><span class="mem-kind">Obra · 2020</span><span class="mem-where">E-mail da 4ª síndica</span><span class="mem-name">Pintura da fachada</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="contrato" data-year="2021.0" data-lost="2022" aria-pressed="false" aria-controls="mem-file" data-com="Contrato novo, sem perder o histórico de chamados da empresa anterior." data-sem="O histórico de chamados ficou com a empresa anterior."><span class="mem-kind">Contrato · 2021</span><span class="mem-where">Empresa anterior</span><span class="mem-name">Nova empresa de elevadores</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="obrigacao" data-year="2021.4" data-lost="2022" aria-pressed="false" aria-controls="mem-file" data-com="Quadros e cargas revisados; cada pendência virou uma manutenção." data-sem="Num pen drive que ninguém sabe onde está."><span class="mem-kind">Laudo · 2021</span><span class="mem-where">Pen drive</span><span class="mem-name">Instalações elétricas</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="manutencao" data-year="2021.8" data-lost="2022" aria-pressed="false" aria-controls="mem-file" data-com="Testes periódicos registrados, com o técnico responsável por cada um." data-sem="Numa planilha que não passou para a gestão seguinte."><span class="mem-kind">Manutenção · 2021</span><span class="mem-where">Planilha da síndica</span><span class="mem-name">Bombas de incêndio</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                  </ul>
+                </li>
+                <li class="mem-col">
+                  <span class="mem-swap" aria-hidden="true">Troca de gestão</span>
+                  <p class="mem-col-head"><b>2022 a 2024</b><span>5º síndico</span></p>
+                  <ul class="mem-items">
+                    <li><button type="button" class="mem-item" data-type="obrigacao" data-year="2022.3" data-lost="2024" aria-pressed="false" aria-controls="mem-file" data-com="Renovação feita com o processo de 2017 em mãos." data-sem="Renovado às pressas: o processo anterior tinha sumido e foi refeito do zero."><span class="mem-kind">Obrigação · 2022</span><span class="mem-where">E-mail do 5º síndico</span><span class="mem-name">AVCB renovado</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="obra" data-year="2022.9" data-lost="2024" aria-pressed="false" aria-controls="mem-file" data-com="Projeto, três orçamentos comparados e o responsável técnico da obra." data-sem="Os orçamentos foram discutidos num grupo de WhatsApp."><span class="mem-kind">Obra · 2022</span><span class="mem-where">WhatsApp</span><span class="mem-name">Salão de festas</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="obrigacao" data-year="2023.4" data-lost="2024" aria-pressed="false" aria-controls="mem-file" data-com="Teste de estanqueidade da rede, com laudo e responsável técnico." data-sem="O laudo ficou com o 5º síndico, que se mudou do prédio."><span class="mem-kind">Laudo · 2023</span><span class="mem-where">Foi na mudança</span><span class="mem-name">Rede de gás</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="obrigacao" data-year="2023.8" data-lost="2024" aria-pressed="false" aria-controls="mem-file" data-com="Apólice obrigatória, com coberturas e vigência à vista." data-sem="A apólice ficou na pasta do 5º síndico."><span class="mem-kind">Obrigação · 2023</span><span class="mem-where">Pasta do 5º síndico</span><span class="mem-name">Seguro do condomínio</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                  </ul>
+                </li>
+                <li class="mem-col mem-col--now is-active">
+                  <span class="mem-swap" aria-hidden="true">Troca de gestão</span>
+                  <p class="mem-col-head"><b>2024 a 2026</b><span>Gestão atual</span></p>
+                  <ul class="mem-items">
+                    <li><button type="button" class="mem-item" data-type="manutencao" data-year="2024.3" aria-pressed="false" aria-controls="mem-file" data-com="Plano preventivo (NBR 5674) com 59 itens, cada um com responsável e prazo." data-sem="Numa planilha sua. Na próxima troca, vai junto."><span class="mem-kind">Plano · 2024</span><span class="mem-where">Sua planilha</span><span class="mem-name">Plano de manutenção</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="manutencao" data-year="2024.9" aria-pressed="false" aria-controls="mem-file" data-com="Feita no prazo, com as fotos anexadas ao registro." data-sem="As fotos estão no seu celular."><span class="mem-kind">Manutenção · 2024</span><span class="mem-where">Seu celular</span><span class="mem-name">Limpeza das calhas</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="vistoria" data-year="2025.4" aria-pressed="false" aria-controls="mem-file" data-com="Cada não conformidade encontrada virou uma manutenção com prazo." data-sem="Um PDF no seu e-mail, com as pendências para acompanhar à mão."><span class="mem-kind">Vistoria · 2025</span><span class="mem-where">PDF no seu e-mail</span><span class="mem-name">Ronda da engenharia</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                    <li><button type="button" class="mem-item" data-type="contrato" data-year="2025.9" aria-pressed="false" aria-controls="mem-file" data-com="Contratos, notas fiscais e contatos de cada empresa que atende o prédio." data-sem="Os contatos estão na agenda do seu celular."><span class="mem-kind">Contratos · 2025</span><span class="mem-where">Sua agenda</span><span class="mem-name">Fornecedores</span><span class="sr-only mem-lost-sr">, não encontrado</span></button></li>
+                  </ul>
+                </li>
+                <li class="mem-col mem-col--next">
+                  <span class="mem-callout" data-callout="2" aria-hidden="true">02</span>
+                  <p class="mem-col-head"><b>2026 a 2028</b><span>Próxima gestão</span></p>
+                  <div class="mem-next-body">
+                    <ul class="mem-items">
+                      <li><button type="button" class="mem-item mem-item--due" data-type="manutencao" aria-pressed="false" aria-controls="mem-file" data-com="A próxima limpeza já está agendada, com o laudo de potabilidade."><span class="mem-kind">Prazo · dez/2026</span><span class="mem-name">Caixas-d'água</span></button></li>
+                      <li><button type="button" class="mem-item mem-item--due" data-type="obrigacao" aria-pressed="false" aria-controls="mem-file" data-com="A nova medição já está no calendário, com o laudo anterior para comparar."><span class="mem-kind">Prazo · mar/2027</span><span class="mem-name">Para-raios (SPDA)</span></button></li>
+                      <li><button type="button" class="mem-item mem-item--due" data-type="obrigacao" aria-pressed="false" aria-controls="mem-file" data-com="Renovação com as coberturas revistas antes do vencimento."><span class="mem-kind">Prazo · jun/2027</span><span class="mem-name">Seguro do condomínio</span></button></li>
+                      <li><button type="button" class="mem-item mem-item--due" data-type="obrigacao" aria-pressed="false" aria-controls="mem-file" data-com="Renovação com o processo anterior em mãos, sem começar do zero."><span class="mem-kind">Prazo · set/2027</span><span class="mem-name">AVCB</span></button></li>
+                    </ul>
+                    <p class="mem-unknown"><b aria-hidden="true">?</b> Ninguém sabe o que vence.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="mem-base">
+              <p class="mem-base-com">
+                <span class="mem-callout" data-callout="1" aria-hidden="true">01</span>
+                <span class="mem-base-mark"><img src="/assets/brand/fremon-symbol.svg" alt="" width="22" height="22" loading="lazy" /></span>
+                <span><b>Acervo do edifício no Fremon.</b> Cada registro fica com o prédio, não com quem sai.</span>
+              </p>
+              <p class="mem-base-sem">Cada gestão guardou do seu jeito e levou junto ao sair.</p>
+            </div>
+
+            <p class="sr-only" aria-live="polite" data-memory-live></p>
+
+            <div class="mem-file" id="mem-file" data-memory-file>
+              <span class="mem-callout" data-callout="3" aria-hidden="true">03</span>
+              <div>
+                <p class="mem-file-meta" data-file-meta>Obra · 2015 · no acervo do prédio</p>
+                <p class="mem-file-name" data-file-name>Impermeabilização</p>
+              </div>
+              <p class="mem-file-text" data-file-text>Cobertura refeita, com o termo de garantia de 5 anos no acervo. Em 2019, a garantia pagou o reparo de uma infiltração.</p>
+            </div>
+          </div>
+          <p class="mem-note">Histórico ilustrativo de um prédio entregue em 2014.</p>
+
+          <div class="principles-row reveal">
+            <article data-lens="1"><span>01</span><h3>Organizar</h3><p>Projetos, laudos, contratos e atas ficam com o prédio, não em pastas e e-mails pessoais.</p></article>
+            <article data-lens="2"><span>02</span><h3>Antecipar</h3><p>Renovações, inspeções e manutenções aparecem antes de vencer, com responsável e prazo.</p></article>
+            <article data-lens="3"><span>03</span><h3>Rastrear</h3><p>Cada registro preserva o contexto: quem fez, quando e com quais evidências.</p></article>
+            <article data-lens="4"><span>04</span><h3>Continuar</h3><p>Quando síndico, administradora ou fornecedor mudam, a história do prédio continua.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section product-section" id="plataforma" aria-labelledby="product-title">
+        <div class="container">
+          <div class="section-heading product-heading reveal">
+            <p class="eyebrow eyebrow--inverse"><span></span> Plataforma Fremon</p>
+            <h2 id="product-title">Uma única leitura técnica do seu condomínio.</h2>
+            <p>
+              Não são telas para preencher. É o prédio inteiro organizado para o síndico saber o que existe, o que vence, o que exige atenção e o que já foi decidido, e mostrar isso ao conselho.
+            </p>
+          </div>
+
+          <div class="product-theatre reveal" data-product-tabs>
+            <div class="product-tabs" role="tablist" aria-label="Áreas da plataforma">
+              <button type="button" id="tab-building" role="tab" aria-selected="true" aria-controls="panel-building" tabindex="0" data-product-tab="building">
+                <span>01</span><strong>Seu prédio</strong><small>Do telhado ao subsolo</small>
+              </button>
+              <button type="button" id="tab-obligations" role="tab" aria-selected="false" aria-controls="panel-obligations" tabindex="-1" data-product-tab="obligations">
+                <span>02</span><strong>Obrigações</strong><small>Prazos sob controle</small>
+              </button>
+              <button type="button" id="tab-maintenance" role="tab" aria-selected="false" aria-controls="panel-maintenance" tabindex="-1" data-product-tab="maintenance">
+                <span>03</span><strong>Manutenções</strong><small>Prevenção em rotina</small>
+              </button>
+              <button type="button" id="tab-renovations" role="tab" aria-selected="false" aria-controls="panel-renovations" tabindex="-1" data-product-tab="renovations">
+                <span>04</span><strong>Reformas</strong><small>Conformidade e evidência</small>
+              </button>
+              <button type="button" id="tab-documents" role="tab" aria-selected="false" aria-controls="panel-documents" tabindex="-1" data-product-tab="documents">
+                <span>05</span><strong>Documentos</strong><small>Memória pesquisável</small>
+              </button>
+              <button type="button" id="tab-inspections" role="tab" aria-selected="false" aria-controls="panel-inspections" tabindex="-1" data-product-tab="inspections">
+                <span>06</span><strong>Vistorias</strong><small>Campo conectado</small>
+              </button>
+              <button type="button" id="tab-suppliers" role="tab" aria-selected="false" aria-controls="panel-suppliers" tabindex="-1" data-product-tab="suppliers">
+                <span>07</span><strong>Fornecedores</strong><small>Ciclo fechado</small>
+              </button>
+            </div>
+
+            <div class="product-panels">
+              <section class="product-panel is-active" id="panel-building" role="tabpanel" aria-labelledby="tab-building" data-product-panel="building">
+                <div class="panel-copy">
+                  <p class="panel-index">01 / SEU PRÉDIO</p>
+                  <h3>Você sabe o que está em dia e o que precisa de você hoje.</h3>
+                  <p>Os 19 sistemas do edifício e o corte pavimento a pavimento mostram onde está cada pendência, com tudo pronto para a próxima reunião do conselho.</p>
+                  <ul><li>Os 19 sistemas do seu prédio</li><li>Corte do telhado ao subsolo</li><li>Vencidos destacados por sistema</li></ul>
+                </div>
+                <div class="panel-shot">
+                  <div class="shot-frame">
+                    <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.fremon.com.br</span></div>
+                    <img src="/assets/product/final/edificio-sistemas-940.webp" srcset="/assets/product/final/edificio-sistemas-320.webp 320w, /assets/product/final/edificio-sistemas-480.webp 480w, /assets/product/final/edificio-sistemas-660.webp 660w, /assets/product/final/edificio-sistemas-940.webp 940w, /assets/product/final/edificio-sistemas-1170.webp 1170w, /assets/product/final/edificio-sistemas-1320.webp 1320w, /assets/product/final/edificio-sistemas-1400.webp 1400w, /assets/product/final/edificio-sistemas-1880.webp 1880w" sizes="(max-width: 600px) calc(100vw - 72px), (max-width: 1050px) 87vw, (max-width: 1440px) 66vw, 934px" alt="Sistemas do edifício e corte pavimento a pavimento no painel do condomínio" width="1200" height="750" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              </section>
+
+              <section class="product-panel" id="panel-obligations" role="tabpanel" aria-labelledby="tab-obligations" data-product-panel="obligations" hidden>
+                <div class="panel-copy">
+                  <p class="panel-index">02 / OBRIGAÇÕES</p>
+                  <h3>AVCB, laudos e seguros: nenhum vencimento pega você de surpresa.</h3>
+                  <p>Cada obrigação legal do condomínio com norma, vencimento, responsável e comprovante: a responsabilidade do síndico, documentada.</p>
+                  <ul><li>Situação por vencimento</li><li>Responsável e comprovante por item</li><li>Próximos vencimentos destacados</li></ul>
+                </div>
+                <div class="panel-shot">
+                  <div class="shot-frame">
+                    <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.fremon.com.br</span></div>
+                    <img src="/assets/product/final/obrigacoes-940.webp" srcset="/assets/product/final/obrigacoes-320.webp 320w, /assets/product/final/obrigacoes-480.webp 480w, /assets/product/final/obrigacoes-660.webp 660w, /assets/product/final/obrigacoes-940.webp 940w, /assets/product/final/obrigacoes-1170.webp 1170w, /assets/product/final/obrigacoes-1320.webp 1320w, /assets/product/final/obrigacoes-1400.webp 1400w, /assets/product/final/obrigacoes-1880.webp 1880w" sizes="(max-width: 600px) calc(100vw - 72px), (max-width: 1050px) 87vw, (max-width: 1440px) 66vw, 934px" alt="Obrigações legais do condomínio com situação, vencimento, responsável e comprovantes" width="1200" height="750" loading="lazy" decoding="async" />
+                  </div>
+                  <figure class="shot-detail"><img src="/assets/product/final/obrigacoes-proximos-340.webp" srcset="/assets/product/final/obrigacoes-proximos-150.webp 150w, /assets/product/final/obrigacoes-proximos-240.webp 240w, /assets/product/final/obrigacoes-proximos-340.webp 340w, /assets/product/final/obrigacoes-proximos-420.webp 420w, /assets/product/final/obrigacoes-proximos-500.webp 500w, /assets/product/final/obrigacoes-proximos-680.webp 680w" sizes="(max-width: 820px) 39vw, (max-width: 1050px) 31vw, (max-width: 1440px) 23.5vw, 335px" alt="Próximos vencimentos" width="564" height="334" loading="lazy" decoding="async" /></figure>
+                </div>
+              </section>
+
+              <section class="product-panel" id="panel-maintenance" role="tabpanel" aria-labelledby="tab-maintenance" data-product-panel="maintenance" hidden>
+                <div class="panel-copy">
+                  <p class="panel-index">03 / MANUTENÇÕES</p>
+                  <h3>Prevenção deixa de ser intenção e ganha cadência.</h3>
+                  <p>Do elevador às bombas de incêndio: preventivas, preditivas e corretivas do prédio com local, prazo, status e prioridade.</p>
+                  <ul><li>Plano preventivo por sistema e local</li><li>Status, recorrência e prioridade</li><li>Histórico e fotos de cada execução</li></ul>
+                </div>
+                <div class="panel-shot">
+                  <div class="shot-frame">
+                    <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.fremon.com.br</span></div>
+                    <img src="/assets/product/final/manutencoes-940.webp" srcset="/assets/product/final/manutencoes-320.webp 320w, /assets/product/final/manutencoes-480.webp 480w, /assets/product/final/manutencoes-660.webp 660w, /assets/product/final/manutencoes-940.webp 940w, /assets/product/final/manutencoes-1170.webp 1170w, /assets/product/final/manutencoes-1320.webp 1320w, /assets/product/final/manutencoes-1400.webp 1400w, /assets/product/final/manutencoes-1880.webp 1880w" sizes="(max-width: 600px) calc(100vw - 72px), (max-width: 1050px) 87vw, (max-width: 1440px) 66vw, 934px" alt="Manutenções do Fremon com indicadores, local, prazo, status e prioridade" width="1200" height="750" loading="lazy" decoding="async" />
+                  </div>
+                  <figure class="shot-detail"><img src="/assets/product/final/manutencoes-prioridade-340.webp" srcset="/assets/product/final/manutencoes-prioridade-150.webp 150w, /assets/product/final/manutencoes-prioridade-240.webp 240w, /assets/product/final/manutencoes-prioridade-340.webp 340w, /assets/product/final/manutencoes-prioridade-420.webp 420w, /assets/product/final/manutencoes-prioridade-500.webp 500w, /assets/product/final/manutencoes-prioridade-680.webp 680w" sizes="(max-width: 820px) 39vw, (max-width: 1050px) 31vw, (max-width: 1440px) 23.5vw, 335px" alt="Resumo das manutenções por prioridade" width="564" height="259" loading="lazy" decoding="async" /></figure>
+                </div>
+              </section>
+
+              <section class="product-panel" id="panel-renovations" role="tabpanel" aria-labelledby="tab-renovations" data-product-panel="renovations" hidden>
+                <div class="panel-copy">
+                  <p class="panel-index">04 / REFORMAS</p>
+                  <h3>A obra do apartamento 504 também é assunto do síndico.</h3>
+                  <p>Reformas de unidades e áreas comuns acompanhadas da análise à conclusão, com responsável técnico e documentação, como pede a NBR 16280.</p>
+                  <ul><li>Quadro por fase da reforma</li><li>Unidades e áreas comuns</li><li>Responsável técnico e prazo</li></ul>
+                </div>
+                <div class="panel-shot">
+                  <div class="shot-frame">
+                    <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.fremon.com.br</span></div>
+                    <img src="/assets/product/final/reformas-940.webp" srcset="/assets/product/final/reformas-320.webp 320w, /assets/product/final/reformas-480.webp 480w, /assets/product/final/reformas-660.webp 660w, /assets/product/final/reformas-940.webp 940w, /assets/product/final/reformas-1170.webp 1170w, /assets/product/final/reformas-1320.webp 1320w, /assets/product/final/reformas-1400.webp 1400w, /assets/product/final/reformas-1880.webp 1880w" sizes="(max-width: 600px) calc(100vw - 72px), (max-width: 1050px) 87vw, (max-width: 1440px) 66vw, 934px" alt="Reformas do Fremon em quadro por fase, com unidades, áreas comuns, prazos e responsáveis técnicos" width="1200" height="750" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              </section>
+
+              <section class="product-panel" id="panel-documents" role="tabpanel" aria-labelledby="tab-documents" data-product-panel="documents" hidden>
+                <div class="panel-copy">
+                  <p class="panel-index">05 / DOCUMENTOS</p>
+                  <h3>Todo documento encontra seu lugar e pode ser encontrado.</h3>
+                  <p>Convenção, regimento, atas, apólice, contratos e o manual do prédio organizados por categoria, com quem enviou e quando.</p>
+                  <ul><li>Busca por título e categoria</li><li>Acervo que passa de um mandato para o outro</li><li>Autor e data de cada envio</li></ul>
+                </div>
+                <div class="panel-shot">
+                  <div class="shot-frame">
+                    <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.fremon.com.br</span></div>
+                    <img src="/assets/product/final/documentos-940.webp" srcset="/assets/product/final/documentos-320.webp 320w, /assets/product/final/documentos-480.webp 480w, /assets/product/final/documentos-660.webp 660w, /assets/product/final/documentos-940.webp 940w, /assets/product/final/documentos-1170.webp 1170w, /assets/product/final/documentos-1320.webp 1320w, /assets/product/final/documentos-1400.webp 1400w, /assets/product/final/documentos-1880.webp 1880w" sizes="(max-width: 600px) calc(100vw - 72px), (max-width: 1050px) 87vw, (max-width: 1440px) 66vw, 934px" alt="Documentos do condomínio com categoria, data e autor do envio" width="1200" height="750" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              </section>
+
+              <section class="product-panel" id="panel-inspections" role="tabpanel" aria-labelledby="tab-inspections" data-product-panel="inspections" hidden>
+                <div class="panel-copy">
+                  <p class="panel-index">06 / VISTORIAS</p>
+                  <h3>A engenharia vai a campo. Você recebe o que importa.</h3>
+                  <p>Quando a equipe de engenharia faz a ronda no seu prédio, na inspeção predial ou na Gestão Ativa, cada não conformidade encontrada chega até você como uma manutenção, com prioridade e prazo.</p>
+                  <ul><li>Técnico e engenheiro responsável</li><li>Engenheiro com registro no CREA</li><li>Não conformidade vira manutenção</li></ul>
+                </div>
+                <div class="panel-shot">
+                  <div class="shot-frame">
+                    <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.fremon.com.br</span></div>
+                    <img src="/assets/product/final/vistorias-940.webp" srcset="/assets/product/final/vistorias-320.webp 320w, /assets/product/final/vistorias-480.webp 480w, /assets/product/final/vistorias-660.webp 660w, /assets/product/final/vistorias-940.webp 940w, /assets/product/final/vistorias-1170.webp 1170w, /assets/product/final/vistorias-1320.webp 1320w, /assets/product/final/vistorias-1400.webp 1400w, /assets/product/final/vistorias-1880.webp 1880w" sizes="(max-width: 600px) calc(100vw - 72px), (max-width: 1050px) 87vw, (max-width: 1440px) 66vw, 934px" alt="Tela de vistorias da equipe de engenharia, com técnico, engenheiro, situação, andamento e manutenções geradas" width="1200" height="750" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              </section>
+
+              <section class="product-panel" id="panel-suppliers" role="tabpanel" aria-labelledby="tab-suppliers" data-product-panel="suppliers" hidden>
+                <div class="panel-copy">
+                  <p class="panel-index">07 / FORNECEDORES</p>
+                  <h3>A empresa certa, encontrada dentro da manutenção.</h3>
+                  <p>Catálogo de fornecedores por sistema, especialidade e cidade, com a busca continuada na própria manutenção.</p>
+                  <ul><li>Consulta em três passos</li><li>Sistemas e especialidades</li><li>Serviços descritos pela empresa</li></ul>
+                </div>
+                <div class="panel-shot">
+                  <div class="shot-frame">
+                    <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.fremon.com.br</span></div>
+                    <img src="/assets/product/final/fornecedores-940.webp" srcset="/assets/product/final/fornecedores-320.webp 320w, /assets/product/final/fornecedores-480.webp 480w, /assets/product/final/fornecedores-660.webp 660w, /assets/product/final/fornecedores-940.webp 940w, /assets/product/final/fornecedores-1170.webp 1170w, /assets/product/final/fornecedores-1320.webp 1320w, /assets/product/final/fornecedores-1400.webp 1400w, /assets/product/final/fornecedores-1880.webp 1880w" sizes="(max-width: 600px) calc(100vw - 72px), (max-width: 1050px) 87vw, (max-width: 1440px) 66vw, 934px" alt="Catálogo de fornecedores do Fremon com sistemas de atuação, especialidades, cidade e serviços" width="1200" height="750" loading="lazy" decoding="async" />
+                  </div>
+                  <figure class="shot-detail"><img src="/assets/product/final/fornecedores-card-340.webp" srcset="/assets/product/final/fornecedores-card-150.webp 150w, /assets/product/final/fornecedores-card-240.webp 240w, /assets/product/final/fornecedores-card-340.webp 340w, /assets/product/final/fornecedores-card-420.webp 420w, /assets/product/final/fornecedores-card-500.webp 500w, /assets/product/final/fornecedores-card-680.webp 680w" sizes="(max-width: 820px) 39vw, (max-width: 1050px) 31vw, (max-width: 1440px) 23.5vw, 335px" alt="Ficha resumida de um fornecedor" width="562" height="344" loading="lazy" decoding="async" /></figure>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div class="product-footer reveal">
+            <p>Interface do Fremon com dados demonstrativos. Algumas telas são composições ilustrativas.</p>
+            <a class="arrow-link arrow-link--inverse" href="#contato">Conhecer a plataforma aplicada ao meu condomínio <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section xray-section" id="raio-x" aria-labelledby="xray-title">
+        <div class="container xray-layout">
+          <div class="xray-copy reveal">
+            <p class="eyebrow"><span></span> Raio-X do edifício</p>
+            <h2 id="xray-title">Seu prédio, <em>andar por andar.</em></h2>
+            <p>
+              O Fremon posiciona cada manutenção onde ela acontece. Escolha um pavimento e veja o que está em dia, o que vence e o que já passou do prazo, sem abrir planilha nem perguntar ao zelador.
+            </p>
+            <ul class="xray-legend" aria-label="Legenda">
+              <li><i class="is-o"></i> Em dia</li>
+              <li><i class="is-w"></i> Vence em 30 dias</li>
+              <li><i class="is-l"></i> Vencido</li>
+              <li><i class="is-c"></i> Corretiva aberta</li>
+            </ul>
+            <p class="xray-note">Residencial Mirante do Parque · prédio de demonstração</p>
+          </div>
+
+          <div class="xray-stage reveal" data-reveal-delay="2" data-xray>
+            <div class="xray-building" role="group" aria-label="Pavimentos do edifício">
+                <button type="button" class="xray-floor xray-floor--roof" style="--f: 0" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="telhado" aria-label="Telhado: 5 itens, 1 corretiva aberta, 4 em dia"><span class="xray-label">Telhado</span><span class="xray-dots" aria-hidden="true"><i class="is-c"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i></span><span class="xray-count" aria-hidden="true">5</span></button>
+                <button type="button" class="xray-floor xray-floor--roof" style="--f: 1" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="maquinas" aria-label="Casa de máquinas: 3 itens, 2 a vencer, 1 em dia"><span class="xray-label">Casa de máquinas</span><span class="xray-dots" aria-hidden="true"><i class="is-w"></i><i class="is-w"></i><i class="is-o"></i></span><span class="xray-count" aria-hidden="true">3</span></button>
+                <button type="button" class="xray-floor xray-floor--top" style="--f: 2" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="cobertura" aria-label="Cobertura: 3 itens, 1 vencido, 2 em dia"><span class="xray-label">Cobertura</span><span class="xray-dots" aria-hidden="true"><i class="is-l"></i><i class="is-o"></i><i class="is-o"></i></span><span class="xray-count" aria-hidden="true">3</span></button>
+                <button type="button" class="xray-floor xray-floor--body" style="--f: 3" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="andar10" aria-label="10º andar: 1 item, 1 a vencer"><span class="xray-label">10º andar</span><span class="xray-dots" aria-hidden="true"><i class="is-w"></i></span><span class="xray-count" aria-hidden="true">1</span></button>
+                <button type="button" class="xray-floor xray-floor--body" style="--f: 4" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="andar9" aria-label="9º andar: 1 item, 1 em dia"><span class="xray-label">9º andar</span><span class="xray-dots" aria-hidden="true"><i class="is-o"></i></span><span class="xray-count" aria-hidden="true">1</span></button>
+                <div class="xray-floor xray-floor--body is-empty" style="--f: 5"><span class="xray-label">8º andar</span><span class="xray-dots"></span><span class="xray-count">0</span></div>
+                <button type="button" class="xray-floor xray-floor--body" style="--f: 6" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="andar7" aria-label="7º andar: 1 item, 1 em dia"><span class="xray-label">7º andar</span><span class="xray-dots" aria-hidden="true"><i class="is-o"></i></span><span class="xray-count" aria-hidden="true">1</span></button>
+                <button type="button" class="xray-floor xray-floor--body" style="--f: 7" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="andar6" aria-label="6º andar: 1 item, 1 em dia"><span class="xray-label">6º andar</span><span class="xray-dots" aria-hidden="true"><i class="is-o"></i></span><span class="xray-count" aria-hidden="true">1</span></button>
+                <div class="xray-floor xray-floor--body is-empty" style="--f: 8"><span class="xray-label">1º a 5º andar</span><span class="xray-dots"></span><span class="xray-count">0</span></div>
+                <button type="button" class="xray-floor xray-floor--ground is-selected" style="--f: 9" aria-pressed="true" aria-controls="xray-detail" data-xray-floor="terreo" aria-label="Térreo: 15 itens, 1 vencido, 2 corretivas abertas, 3 a vencer, 8 em dia, 1 sem data"><span class="xray-label">Térreo</span><span class="xray-dots" aria-hidden="true"><i class="is-c"></i><i class="is-c"></i><i class="is-l"></i><i class="is-w"></i><i class="is-w"></i><i class="is-w"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i><i class="is-n"></i></span><span class="xray-count" aria-hidden="true">15</span></button>
+                <div class="xray-street" aria-hidden="true"><span>nível da rua</span></div>
+                <button type="button" class="xray-floor xray-floor--below" style="--f: 10" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="subsolo1" aria-label="1º subsolo: 8 itens, 2 vencidos, 1 corretiva aberta, 1 a vencer, 4 em dia"><span class="xray-label">1º subsolo</span><span class="xray-dots" aria-hidden="true"><i class="is-c"></i><i class="is-l"></i><i class="is-l"></i><i class="is-w"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i><i class="is-o"></i></span><span class="xray-count" aria-hidden="true">8</span></button>
+                <button type="button" class="xray-floor xray-floor--below" style="--f: 11" aria-pressed="false" aria-controls="xray-detail" data-xray-floor="subsolo2" aria-label="2º subsolo: 3 itens, 1 corretiva aberta, 2 em dia"><span class="xray-label">2º subsolo</span><span class="xray-dots" aria-hidden="true"><i class="is-c"></i><i class="is-o"></i><i class="is-o"></i></span><span class="xray-count" aria-hidden="true">3</span></button>
+            </div>
+            <div class="xray-detail" id="xray-detail" aria-live="polite">
+                <article data-xray-panel="telhado" hidden>
+                  <p class="xray-kicker">Telhado · 5 itens</p>
+                  <h3>Uma corretiva em andamento; o resto em dia.</h3>
+                  <ul><li class="is-c"><strong>Telhas quebradas sobre a casa de máquinas (Torre A)</strong><span>Corretiva em andamento</span></li><li class="is-o"><strong>Limpeza e desinfecção dos reservatórios</strong><span>Em dia · 03/12</span></li><li class="is-o"><strong>Inspeção e laudo do SPDA</strong><span>Em dia · 28/03/2027</span></li></ul><p class="xray-more">+ 2 itens em dia neste pavimento</p>
+                </article>
+                <article data-xray-panel="maquinas" hidden>
+                  <p class="xray-kicker">Casa de máquinas · 3 itens</p>
+                  <h3>Elevadores com a manutenção mensal no radar.</h3>
+                  <ul><li class="is-w"><strong>Manutenção mensal dos elevadores (Torre B)</strong><span>Vence em 5 dias</span></li><li class="is-w"><strong>Manutenção mensal dos elevadores (Torre A)</strong><span>Vence em 19 dias</span></li><li class="is-o"><strong>Relatório de inspeção anual dos elevadores</strong><span>Em dia · 16/02/2027</span></li></ul>
+                </article>
+                <article data-xray-panel="cobertura" hidden>
+                  <p class="xray-kicker">Cobertura · 3 itens</p>
+                  <h3>A calha da Torre B passou do prazo.</h3>
+                  <ul><li class="is-l"><strong>Limpeza das calhas e condutores (Torre B)</strong><span>Vencida há 22 dias</span></li><li class="is-o"><strong>Inspeção da manta impermeabilizante do terraço</strong><span>Em dia · 17/05/2027</span></li><li class="is-o"><strong>Limpeza dos condutores pluviais (Torre A)</strong><span>Em dia · 26/02/2027</span></li></ul>
+                </article>
+                <article data-xray-panel="andar10" hidden>
+                  <p class="xray-kicker">10º andar · 1 item</p>
+                  <h3>Iluminação de emergência vence em 8 dias.</h3>
+                  <ul><li class="is-w"><strong>Teste dos blocos de iluminação de emergência (Torre B)</strong><span>Vence em 8 dias</span></li></ul>
+                </article>
+                <article data-xray-panel="andar9" hidden>
+                  <p class="xray-kicker">9º andar · 1 item</p>
+                  <h3>Corrimãos das escadas revisados no prazo.</h3>
+                  <ul><li class="is-o"><strong>Revisão dos corrimãos das escadas (Torre B)</strong><span>Em dia · 12/01/2027</span></li></ul>
+                </article>
+                <article data-xray-panel="andar7" hidden>
+                  <p class="xray-kicker">7º andar · 1 item</p>
+                  <h3>Detectores de fumaça com teste programado.</h3>
+                  <ul><li class="is-o"><strong>Teste dos detectores de fumaça (Torre A)</strong><span>Em dia · 28/12</span></li></ul>
+                </article>
+                <article data-xray-panel="andar6" hidden>
+                  <p class="xray-kicker">6º andar · 1 item</p>
+                  <h3>Pressão da água sob controle.</h3>
+                  <ul><li class="is-o"><strong>Regulagem das válvulas redutoras de pressão (Torre B)</strong><span>Em dia · 06/02/2027</span></li></ul>
+                </article>
+                <article data-xray-panel="terreo">
+                  <p class="xray-kicker">Térreo · 15 itens</p>
+                  <h3>Um extintor sem lacre e mangueiras vencidas.</h3>
+                  <ul><li class="is-c"><strong>Extintor sem lacre no hall</strong><span>Corretiva · prazo hoje</span></li><li class="is-l"><strong>Inspeção e teste das mangueiras (Torre A)</strong><span>Vencida há 14 dias</span></li><li class="is-w"><strong>Limpeza das condensadoras das áreas comuns</strong><span>Vence em 12 dias</span></li><li class="is-w"><strong>Revisão das câmeras de CFTV</strong><span>Vence em 14 dias</span></li></ul><p class="xray-more">+ 11 itens em dia neste pavimento</p>
+                </article>
+                <article data-xray-panel="subsolo1" hidden>
+                  <p class="xray-kicker">1º subsolo · 8 itens</p>
+                  <h3>Hidrantes e gerador pedem decisão.</h3>
+                  <ul><li class="is-l"><strong>Inspeção dos hidrantes e abrigos (Torre B)</strong><span>Vencida há 19 dias</span></li><li class="is-l"><strong>Teste em carga do gerador</strong><span>Vencido há 5 dias</span></li><li class="is-c"><strong>Bateria do gerador abaixo da carga mínima na partida</strong><span>Corretiva aberta</span></li><li class="is-w"><strong>Reaperto e inspeção do QGBT</strong><span>Vence em 30 dias</span></li></ul><p class="xray-more">+ 4 itens em dia neste pavimento</p>
+                </article>
+                <article data-xray-panel="subsolo2" hidden>
+                  <p class="xray-kicker">2º subsolo · 3 itens</p>
+                  <h3>A infiltração da garagem já tem registro.</h3>
+                  <ul><li class="is-c"><strong>Infiltração no teto da garagem, próximo à vaga 42</strong><span>Corretiva · prazo 08/11</span></li><li class="is-o"><strong>Desobstrução dos drenos da cortina de contenção</strong><span>Em dia · 23/12</span></li><li class="is-o"><strong>Inspeção das lajes da garagem</strong><span>Em dia · 27/04/2027</span></li></ul>
+                </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section modules-section" id="modulos" aria-labelledby="modules-title">
+        <div class="container">
+          <div class="section-heading section-heading--split reveal">
+            <div>
+              <p class="eyebrow"><span></span> Cobertura operacional</p>
+              <h2 id="modules-title">Tudo que protege o patrimônio precisa <em>conversar.</em></h2>
+            </div>
+            <p>No Fremon, as frentes do prédio não vivem separadas: a vistoria vira manutenção, a manutenção chama o fornecedor e a evidência fica no acervo. Toque em um módulo para ver com quem ele conversa.</p>
+          </div>
+
+          <!-- Mapa dos módulos: o prédio no centro e as ligações que existem no app. O HTML já
+               mostra Manutenções; o JS conta "o caminho de um problema" quando o mapa aparece. -->
+          <div class="mapx reveal" data-mapx data-active="manutencoes">
+            <div class="mapx-map">
+              <svg class="mapx-lines" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                <circle class="mapx-orbit" cx="50" cy="50" r="35" />
+                <circle class="mapx-orbit mapx-orbit--inner" cx="50" cy="50" r="22" />
+                <g class="mapx-spokes">
+                <line x1="50" y1="50" x2="50" y2="15" data-node="vistorias" />
+                <line x1="50" y1="50" x2="74.75" y2="25.25" data-node="manutencoes" />
+                <line x1="50" y1="50" x2="85" y2="50" data-node="fornecedores" />
+                <line x1="50" y1="50" x2="74.75" y2="74.75" data-node="sistemas" />
+                <line x1="50" y1="50" x2="50" y2="85" data-node="projetos" />
+                <line x1="50" y1="50" x2="25.25" y2="74.75" data-node="reformas" />
+                <line x1="50" y1="50" x2="15" y2="50" data-node="documentos" />
+                <line x1="50" y1="50" x2="25.25" y2="25.25" data-node="obrigacoes" />
+                </g>
+                <g class="mapx-edges">
+                <line class="mapx-edge" x1="50" y1="15" x2="74.75" y2="25.25" pathLength="1" data-a="vistorias" data-b="manutencoes" />
+                <line class="mapx-edge" x1="74.75" y1="25.25" x2="74.75" y2="74.75" pathLength="1" data-a="manutencoes" data-b="sistemas" />
+                <line class="mapx-edge" x1="74.75" y1="25.25" x2="85" y2="50" pathLength="1" data-a="manutencoes" data-b="fornecedores" />
+                <line class="mapx-edge" x1="74.75" y1="25.25" x2="15" y2="50" pathLength="1" data-a="manutencoes" data-b="documentos" />
+                <line class="mapx-edge" x1="85" y1="50" x2="74.75" y2="74.75" pathLength="1" data-a="fornecedores" data-b="sistemas" />
+                <line class="mapx-edge" x1="25.25" y1="25.25" x2="15" y2="50" pathLength="1" data-a="obrigacoes" data-b="documentos" />
+                <line class="mapx-edge" x1="25.25" y1="25.25" x2="74.75" y2="25.25" pathLength="1" data-a="obrigacoes" data-b="manutencoes" />
+                <line class="mapx-edge" x1="25.25" y1="74.75" x2="15" y2="50" pathLength="1" data-a="reformas" data-b="documentos" />
+                <line class="mapx-edge" x1="50" y1="85" x2="25.25" y2="74.75" pathLength="1" data-a="projetos" data-b="reformas" />
+                </g>
+              </svg>
+              <div class="mapx-hub" aria-hidden="true">
+                <span class="mapx-hub-mark"><img src="/assets/brand/fremon-symbol.svg" alt="" width="30" height="30" loading="lazy" /></span>
+                <b>Seu prédio</b>
+                <small>um acervo só</small>
+              </div>
+              <button type="button" class="mapx-node" style="--x: 50%; --y: 15%" data-node="vistorias" aria-pressed="false" aria-controls="mapx-panel"><span class="mapx-badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span><span class="mapx-label">Vistorias</span></button>
+              <button type="button" class="mapx-node" style="--x: 74.75%; --y: 25.25%" data-node="manutencoes" aria-pressed="true" aria-controls="mapx-panel"><span class="mapx-badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span class="mapx-label">Manutenções</span></button>
+              <button type="button" class="mapx-node" style="--x: 85%; --y: 50%" data-node="fornecedores" aria-pressed="false" aria-controls="mapx-panel"><span class="mapx-badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span class="mapx-label">Fornecedores</span></button>
+              <button type="button" class="mapx-node" style="--x: 74.75%; --y: 74.75%" data-node="sistemas" aria-pressed="false" aria-controls="mapx-panel"><span class="mapx-badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 21 8l-9 5-9-5 9-5z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg></span><span class="mapx-label">Sistemas do edifício</span></button>
+              <button type="button" class="mapx-node" style="--x: 50%; --y: 85%" data-node="projetos" aria-pressed="false" aria-controls="mapx-panel"><span class="mapx-badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><span class="mapx-label">Projetos</span></button>
+              <button type="button" class="mapx-node" style="--x: 25.25%; --y: 74.75%" data-node="reformas" aria-pressed="false" aria-controls="mapx-panel"><span class="mapx-badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4 20 9-9"/><path d="m13 5 6 6-3 3-6-6z"/><path d="M15 3l6 6"/></svg></span><span class="mapx-label">Reformas</span></button>
+              <button type="button" class="mapx-node" style="--x: 15%; --y: 50%" data-node="documentos" aria-pressed="false" aria-controls="mapx-panel"><span class="mapx-badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><span class="mapx-label">Documentos</span></button>
+              <button type="button" class="mapx-node" style="--x: 25.25%; --y: 25.25%" data-node="obrigacoes" aria-pressed="false" aria-controls="mapx-panel"><span class="mapx-badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg></span><span class="mapx-label">Obrigações legais</span></button>
+            </div>
+
+            <div class="mapx-panel" id="mapx-panel">
+              <div class="mapx-tour" data-mapx-tour hidden>
+                <p class="mapx-kicker">O caminho de um problema <span data-mapx-count>1 de 5</span></p>
+                <p class="mapx-step" data-mapx-step></p>
+                <ol class="mapx-dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
+                <p class="mapx-hint">Toque em qualquer módulo para explorar por conta própria.</p>
+                <ol class="mapx-steps" data-mapx-steps hidden>
+                  <li data-from="vistorias">Na ronda, a engenharia encontra uma infiltração na cobertura.</li>
+                  <li data-from="vistorias" data-to="manutencoes">A não conformidade vira uma manutenção, com prazo e prioridade.</li>
+                  <li data-from="manutencoes" data-to="sistemas">Ela entra no sistema Impermeabilização, no pavimento da cobertura.</li>
+                  <li data-from="manutencoes" data-to="fornecedores">Fornecedores recebem o pedido e respondem com proposta e garantia.</li>
+                  <li data-from="manutencoes" data-to="documentos">Fotos e documentos da execução ficam no histórico do prédio.</li>
+                </ol>
+              </div>
+              <article class="mapx-card" data-card="vistorias" hidden>
+                <p class="mapx-kicker">Módulo</p>
+                <h3>Vistorias</h3>
+                <p class="mapx-desc">A ronda da engenharia no prédio, com checklist, fotos e registro de campo.</p>
+                <p class="mapx-with">Conversa com</p>
+                <ul>
+                  <li><button type="button" data-go="manutencoes">Manutenções</button><span>Cada não conformidade vira uma manutenção, com prazo e prioridade.</span></li>
+                </ul>
+              </article>
+              <article class="mapx-card" data-card="manutencoes">
+                <p class="mapx-kicker">Módulo</p>
+                <h3>Manutenções</h3>
+                <p class="mapx-desc">Plano preventivo, corretivas e o histórico de cada execução.</p>
+                <p class="mapx-with">Conversa com</p>
+                <ul>
+                  <li><button type="button" data-go="vistorias">Vistorias</button><span>Recebe cada não conformidade encontrada na ronda.</span></li>
+                  <li><button type="button" data-go="obrigacoes">Obrigações legais</button><span>A manutenção exigida por lei fica ligada à obrigação que ela cumpre.</span></li>
+                  <li><button type="button" data-go="sistemas">Sistemas do edifício</button><span>Cada item fica no seu sistema e no pavimento onde está.</span></li>
+                  <li><button type="button" data-go="fornecedores">Fornecedores</button><span>Vai para fornecedores, que respondem com proposta e garantia.</span></li>
+                  <li><button type="button" data-go="documentos">Documentos</button><span>Fotos e documentos de cada execução ficam no histórico.</span></li>
+                </ul>
+              </article>
+              <article class="mapx-card" data-card="fornecedores" hidden>
+                <p class="mapx-kicker">Módulo</p>
+                <h3>Fornecedores</h3>
+                <p class="mapx-desc">Empresas por sistema, especialidade e cidade, com propostas e garantias.</p>
+                <p class="mapx-with">Conversa com</p>
+                <ul>
+                  <li><button type="button" data-go="manutencoes">Manutenções</button><span>Recebe os pedidos de manutenção e responde com proposta e garantia.</span></li>
+                  <li><button type="button" data-go="sistemas">Sistemas do edifício</button><span>Cada empresa aparece nos sistemas que atende.</span></li>
+                </ul>
+              </article>
+              <article class="mapx-card" data-card="sistemas" hidden>
+                <p class="mapx-kicker">Módulo</p>
+                <h3>Sistemas do edifício</h3>
+                <p class="mapx-desc">Os 19 sistemas do prédio e o corte do telhado ao subsolo.</p>
+                <p class="mapx-with">Conversa com</p>
+                <ul>
+                  <li><button type="button" data-go="manutencoes">Manutenções</button><span>Mostra as manutenções de cada sistema, pavimento a pavimento.</span></li>
+                  <li><button type="button" data-go="fornecedores">Fornecedores</button><span>As empresas são organizadas pelos sistemas que atendem.</span></li>
+                </ul>
+              </article>
+              <article class="mapx-card" data-card="projetos" hidden>
+                <p class="mapx-kicker">Módulo</p>
+                <h3>Projetos</h3>
+                <p class="mapx-desc">Arquitetura, estrutura e instalações, por disciplina e versão.</p>
+                <p class="mapx-with">Conversa com</p>
+                <ul>
+                  <li><button type="button" data-go="reformas">Reformas</button><span>A engenharia consulta os projetos ao analisar cada reforma.</span></li>
+                </ul>
+              </article>
+              <article class="mapx-card" data-card="reformas" hidden>
+                <p class="mapx-kicker">Módulo</p>
+                <h3>Reformas</h3>
+                <p class="mapx-desc">Reformas das unidades e das áreas comuns, com a análise da engenharia.</p>
+                <p class="mapx-with">Conversa com</p>
+                <ul>
+                  <li><button type="button" data-go="projetos">Projetos</button><span>A análise da engenharia consulta os projetos do prédio.</span></li>
+                  <li><button type="button" data-go="documentos">Documentos</button><span>Documentos exigidos e termo de responsabilidade ficam registrados.</span></li>
+                </ul>
+              </article>
+              <article class="mapx-card" data-card="documentos" hidden>
+                <p class="mapx-kicker">Módulo</p>
+                <h3>Documentos</h3>
+                <p class="mapx-desc">Atas, contratos, manuais, laudos e evidências, fáceis de achar.</p>
+                <p class="mapx-with">Conversa com</p>
+                <ul>
+                  <li><button type="button" data-go="manutencoes">Manutenções</button><span>Guarda fotos e documentos de cada manutenção executada.</span></li>
+                  <li><button type="button" data-go="obrigacoes">Obrigações legais</button><span>Guarda os laudos e comprovantes de cada obrigação.</span></li>
+                  <li><button type="button" data-go="reformas">Reformas</button><span>Guarda os documentos exigidos de cada reforma.</span></li>
+                </ul>
+              </article>
+              <article class="mapx-card" data-card="obrigacoes" hidden>
+                <p class="mapx-kicker">Módulo</p>
+                <h3>Obrigações legais</h3>
+                <p class="mapx-desc">AVCB, para-raios, gás, água e seguro: prazos, responsáveis e comprovantes.</p>
+                <p class="mapx-with">Conversa com</p>
+                <ul>
+                  <li><button type="button" data-go="manutencoes">Manutenções</button><span>As manutenções que cumprem a obrigação ficam ligadas a ela, como a limpeza das caixas-d'água.</span></li>
+                  <li><button type="button" data-go="documentos">Documentos</button><span>O comprovante fica junto do prazo que ele cumpre.</span></li>
+                </ul>
+              </article>
+              <p class="sr-only" aria-live="polite" data-mapx-live></p>
+              <button type="button" class="mapx-replay" data-mapx-replay><span aria-hidden="true">↺</span> Ver o caminho de um problema</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section portfolio-section" id="carteira" aria-labelledby="portfolio-title">
+        <div class="container portfolio-layout">
+          <div class="portfolio-copy reveal">
+            <p class="eyebrow"><span></span> Cuida de mais de um condomínio?</p>
+            <h2 id="portfolio-title">Da visão de portfólio ao detalhe de cada edifício.</h2>
+            <p>
+              Para síndicos profissionais e administradoras, o mesmo painel de cada prédio ganha uma visão de carteira: trocar de condomínio não significa trocar de planilha, pasta ou padrão de acompanhamento.
+            </p>
+            <ul class="feature-list">
+              <li><span>01</span><div><strong>Panorama consolidado</strong><p>Veja quais entidades exigem decisão antes de abrir cada operação.</p></div></li>
+              <li><span>02</span><div><strong>Padrão replicável</strong><p>Uma mesma lógica de governança, preservando a realidade de cada condomínio.</p></div></li>
+              <li><span>03</span><div><strong>Prestação de contas mais clara</strong><p>Prioridades, avanços e evidências organizados para conselho e clientes.</p></div></li>
+            </ul>
+            <a class="arrow-link" href="#contato">Organizar meu portfólio <span>↗</span></a>
+          </div>
+
+          <div class="portfolio-visual portfolio-visual--shots reveal" data-reveal-delay="2">
+            <figure class="stack-shot stack-shot--back"><img src="/assets/product/final/portfolio-600.webp" srcset="/assets/product/final/portfolio-300.webp 300w, /assets/product/final/portfolio-480.webp 480w, /assets/product/final/portfolio-600.webp 600w, /assets/product/final/portfolio-740.webp 740w, /assets/product/final/portfolio-900.webp 900w, /assets/product/final/portfolio-1200.webp 1200w" sizes="(max-width: 820px) 79vw, (max-width: 1440px) 42vw, 592px" alt="Visão geral do portfólio no Fremon com as entidades ordenadas por urgência" width="1280" height="800" loading="lazy" decoding="async" /></figure>
+            <figure class="stack-shot stack-shot--front"><img src="/assets/product/final/edificio-600.webp" srcset="/assets/product/final/edificio-300.webp 300w, /assets/product/final/edificio-480.webp 480w, /assets/product/final/edificio-600.webp 600w, /assets/product/final/edificio-740.webp 740w, /assets/product/final/edificio-900.webp 900w, /assets/product/final/edificio-1200.webp 1200w" sizes="(max-width: 820px) 79vw, (max-width: 1440px) 42vw, 592px" alt="Home de uma entidade no Fremon com a foto do edifício e a situação do plano de manutenção" width="1200" height="750" loading="lazy" decoding="async" /></figure>
+            <div class="portfolio-floating-note"><span>8</span><p>entidades na<br />mesma visão</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section engineering-section" id="engenharia" aria-labelledby="engineering-title">
+        <div class="engineering-photo reveal">
+          <img src="/assets/photos/final/engenharia-em-campo-1600.webp" srcset="/assets/photos/final/engenharia-em-campo-1024.webp 1024w, /assets/photos/final/engenharia-em-campo-1600.webp 1600w, /assets/photos/final/engenharia-em-campo-2048.webp 2048w" sizes="(max-width: 1050px) 100vw, 50vw" alt="Obra com acompanhamento técnico da FREMASA Engenharia, com a placa da empresa na fachada" width="2048" height="1536" loading="lazy" decoding="async" />
+          <span class="photo-caption">Experiência de campo · Grupo FREMASA</span>
+        </div>
+        <div class="container engineering-content">
+          <div class="engineering-copy reveal">
+            <p class="eyebrow eyebrow--inverse"><span></span> Engenharia transformada em sistema</p>
+            <h2 id="engineering-title">A tecnologia sabe o que acompanhar porque nasceu onde os problemas acontecem.</h2>
+            <p>
+              O Fremon não é um software genérico adaptado ao universo predial. Sua lógica nasce da atuação do Grupo FREMASA em diagnóstico, inspeções, gerenciamento de obras e proteção patrimonial.
+            </p>
+            <blockquote>“A experiência de campo define o método. O Fremon torna esse método contínuo.”</blockquote>
+            <a class="engineering-signature" href="https://fremasa.com.br/" target="_blank" rel="noopener" aria-label="Grupo FREMASA: conhecer a engenharia em fremasa.com.br (abre em nova aba)">
+              <img src="/assets/brand/fremasa-logo.png" alt="" width="150" height="55" loading="lazy" />
+              <p>Grupo de engenharia que deu origem à plataforma Fremon</p>
+              <em>Ver a FREMASA Engenharia em campo <i aria-hidden="true">↗</i></em>
+            </a>
+          </div>
+          <dl class="engineering-metrics reveal" data-reveal-delay="2">
+            <div><dt>Desde 2017</dt><dd>atuação técnica aplicada a edificações</dd></div>
+            <div><dt>6 departamentos</dt><dd>especialidades conectadas à operação</dd></div>
+            <div><dt>90+ laudos</dt><dd>técnicos emitidos com ART</dd></div>
+            <div><dt>Participação direta</dt><dd>dos sócios em operações estratégicas</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section decay-section" id="custo-de-adiar" aria-labelledby="decay-title" data-decay>
+        <div class="container">
+          <div class="decay-heading reveal">
+            <p class="eyebrow"><span></span> Quanto custa adiar</p>
+            <h2 id="decay-title">Uma calha entupida não fica <em>barata esperando.</em></h2>
+          </div>
+
+          <div class="decay-stage reveal" data-reveal-delay="1">
+            <div class="decay-scene" data-decay-scene>
+              <svg class="decay-svg" viewBox="0 0 760 520" role="img" aria-labelledby="decay-svg-title decay-svg-desc">
+                <title id="decay-svg-title">Corte de um edifício: calha, laje de cobertura, apartamento do último andar e fachada</title>
+                <desc id="decay-svg-desc">Sem a limpeza da calha, a chuva transborda pela fachada, a água atravessa a laje e mancha o teto do apartamento e, por fim, o concreto da fachada se solta, o que exige andaime e interdição da calçada.</desc>
+                <defs>
+                  <pattern id="dc-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <line x1="0" y1="0" x2="0" y2="7" stroke="rgba(16,21,24,0.2)" stroke-width="1"/>
+                  </pattern>
+                  <pattern id="dc-rain" width="24" height="60" patternUnits="userSpaceOnUse">
+                    <g stroke="#3f86c9" stroke-width="1.4" stroke-linecap="round" opacity="0.55">
+                      <line x1="5" y1="2" x2="2" y2="14"/><line x1="17" y1="24" x2="14" y2="36"/><line x1="11" y1="44" x2="8" y2="56"/>
+                    </g>
+                  </pattern>
+                  <pattern id="dc-tape" width="16" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+                    <rect width="8" height="10" fill="#c4554f"/><rect x="8" width="8" height="10" fill="#fff"/>
+                  </pattern>
+                  <radialGradient id="dc-stain" cx="50%" cy="35%" r="60%">
+                    <stop offset="0" stop-color="#6e4520" stop-opacity="0.8"/>
+                    <stop offset="0.55" stop-color="#a0723a" stop-opacity="0.45"/>
+                    <stop offset="1" stop-color="#c9a46a" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="dc-streak" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#4f4231" stop-opacity="0.55"/>
+                    <stop offset="1" stop-color="#4f4231" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="dc-rust" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#b5562a" stop-opacity="0.75"/>
+                    <stop offset="1" stop-color="#b5562a" stop-opacity="0"/>
+                  </linearGradient>
+                  <clipPath id="dc-sky-clip"><path d="M0 0H760V520H560V100H540V148H0Z"/></clipPath>
+                </defs>
+
+                <!-- Rua e árvore (as folhas vêm dela) -->
+                <g class="dc-exterior">
+                  <line x1="560" y1="520" x2="760" y2="520" stroke="#2a3439" stroke-width="2"/>
+                  <rect x="708" y="150" width="9" height="370" fill="#ddd3c3" stroke="#2a3439" stroke-width="1.2"/>
+                  <g fill="#e2e8dc" stroke="#2a3439" stroke-width="1.1">
+                    <circle cx="652" cy="128" r="34"/><circle cx="742" cy="122" r="34"/><circle cx="700" cy="104" r="52"/>
+                  </g>
+                  <g class="dc-falling-leaves">
+                    <ellipse class="dc-leaf" cx="640" cy="140" rx="5" ry="2.4" fill="#b07a3a"/>
+                    <ellipse class="dc-leaf dc-leaf--2" cx="660" cy="150" rx="5" ry="2.4" fill="#8a9a3e"/>
+                    <ellipse class="dc-leaf dc-leaf--3" cx="628" cy="128" rx="5" ry="2.4" fill="#a5682f"/>
+                  </g>
+                </g>
+
+                <!-- Chuva e nuvem (3 meses em diante) -->
+                <g class="dc-l1">
+                  <path class="dc-cloud" d="M96 70a26 26 0 0 1 48-14 22 22 0 0 1 40 6 18 18 0 0 1 4 36H104a20 20 0 0 1-8-28z" fill="#dfe3e6" stroke="#2a3439" stroke-width="1" opacity="0.85"/>
+                  <path class="dc-cloud" d="M330 52a20 20 0 0 1 37-10 17 17 0 0 1 31 5 14 14 0 0 1 3 28H338a16 16 0 0 1-8-23z" fill="#dfe3e6" stroke="#2a3439" stroke-width="1" opacity="0.7"/>
+                  <g clip-path="url(#dc-sky-clip)"><rect class="dc-rain-sheet" x="0" y="-60" width="760" height="640" fill="url(#dc-rain)"/></g>
+                </g>
+
+                <!-- Edifício em corte -->
+                <g class="dc-building">
+                  <rect x="40" y="170" width="500" height="160" fill="#fbfaf7"/>
+                  <rect x="40" y="348" width="500" height="172" fill="#fbfaf7"/>
+                  <rect x="40" y="150" width="472" height="20" fill="#e7e2d8" stroke="#2a3439" stroke-width="1.4"/><rect x="40" y="150" width="472" height="20" fill="url(#dc-hatch)"/>
+                  <rect x="538" y="150" width="2" height="20" fill="#e7e2d8" stroke="#2a3439" stroke-width="1.4"/><rect x="538" y="150" width="2" height="20" fill="url(#dc-hatch)"/>
+                  <path d="M512 150V164H538V150" fill="#efebe2" stroke="#2a3439" stroke-width="1.4"/>
+                  <line x1="40" y1="148" x2="512" y2="148" stroke="#2a3439" stroke-width="2.2"/>
+                  <rect x="540" y="104" width="20" height="66" fill="#e7e2d8" stroke="#2a3439" stroke-width="1.4"/><rect x="540" y="104" width="20" height="66" fill="url(#dc-hatch)"/>
+                  <path d="M535 104H565V99H535Z" fill="#cfd6da" stroke="#2a3439" stroke-width="1.2"/>
+                  <rect x="540" y="170" width="20" height="52" fill="#e7e2d8" stroke="#2a3439" stroke-width="1.4"/><rect x="540" y="170" width="20" height="52" fill="url(#dc-hatch)"/>
+                  <rect x="540" y="292" width="20" height="100" fill="#e7e2d8" stroke="#2a3439" stroke-width="1.4"/><rect x="540" y="292" width="20" height="100" fill="url(#dc-hatch)"/>
+                  <rect x="540" y="462" width="20" height="58" fill="#e7e2d8" stroke="#2a3439" stroke-width="1.4"/><rect x="540" y="462" width="20" height="58" fill="url(#dc-hatch)"/>
+                  <g fill="#dfe9ef" stroke="#2a3439" stroke-width="1">
+                    <rect x="541" y="222" width="18" height="70"/><rect x="541" y="392" width="18" height="70"/>
+                  </g>
+                  <g stroke="#2a3439" stroke-width="0.8" opacity="0.6">
+                    <line x1="550" y1="222" x2="550" y2="292"/><line x1="550" y1="392" x2="550" y2="462"/>
+                  </g>
+                  <rect x="40" y="330" width="500" height="18" fill="#e7e2d8" stroke="#2a3439" stroke-width="1.4"/><rect x="40" y="330" width="500" height="18" fill="url(#dc-hatch)"/>
+                  <path d="M40 100l-6 10 6 10-6 10 6 10V520" fill="none" stroke="#2a3439" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+                  <!-- Folhas presas na calha -->
+                  <g class="dc-gutter-leaves"><ellipse cx="515" cy="160" rx="6.5" ry="3" transform="rotate(20 515 160)" fill="#b07a3a" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="522" cy="158" rx="6.5" ry="3" transform="rotate(-25 522 158)" fill="#8a9a3e" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="530" cy="160" rx="6.5" ry="3" transform="rotate(35 530 160)" fill="#a5682f" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="536" cy="157" rx="6.5" ry="3" transform="rotate(-30 536 157)" fill="#b07a3a" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="518" cy="153" rx="6.5" ry="3" transform="rotate(-10 518 153)" fill="#c08a45" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="527" cy="152" rx="6.5" ry="3" transform="rotate(15 527 152)" fill="#8a9a3e" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="534" cy="151" rx="6.5" ry="3" transform="rotate(-20 534 151)" fill="#a5682f" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="521" cy="147" rx="6.5" ry="3" transform="rotate(25 521 147)" fill="#b07a3a" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="529" cy="146" rx="6.5" ry="3" transform="rotate(-15 529 146)" fill="#8a9a3e" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="514" cy="148" rx="6.5" ry="3" transform="rotate(40 514 148)" fill="#a5682f" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="537" cy="147" rx="6.5" ry="3" transform="rotate(10 537 147)" fill="#c08a45" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="525" cy="142" rx="6.5" ry="3" transform="rotate(-30 525 142)" fill="#b07a3a" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/><ellipse cx="532" cy="141" rx="6.5" ry="3" transform="rotate(20 532 141)" fill="#a5682f" stroke="rgba(16,21,24,.35)" stroke-width="0.5"/></g>
+                  <circle class="dc-focus" cx="526" cy="152" r="26" fill="none" stroke="#c97943" stroke-width="1.8" stroke-dasharray="5 4"/>
+                </g>
+
+                <!-- Interior: apartamento da cobertura e o de baixo -->
+                <g class="dc-interior" stroke="#2a3439" stroke-width="1.2">
+                  <line x1="300" y1="170" x2="300" y2="196"/>
+                  <path d="M285 210H315L307 196H293Z" fill="#ece4d4"/>
+                  <rect x="92" y="208" width="64" height="44" fill="none"/>
+                  <rect x="98" y="214" width="52" height="32" fill="#e9e3d6" stroke-width="0.8"/>
+                  <path d="M100 244l14-16 10 10 8-7 16 13" fill="none" stroke-width="0.9"/>
+                  <rect x="170" y="268" width="190" height="28" rx="9" fill="#e4ddcf"/>
+                  <rect x="170" y="292" width="190" height="26" rx="6" fill="#ebe5d9"/>
+                  <rect x="158" y="280" width="22" height="40" rx="7" fill="#e4ddcf"/>
+                  <rect x="350" y="280" width="22" height="40" rx="7" fill="#e4ddcf"/>
+                  <line x1="176" y1="320" x2="176" y2="330"/><line x1="354" y1="320" x2="354" y2="330"/>
+                  <rect x="394" y="298" width="32" height="32" fill="#ece6da"/>
+                  <path d="M402 298c-2-14 6-22 8-26 2 4 10 12 8 26" fill="#dfe6d6"/>
+                  <line x1="150" y1="329" x2="420" y2="329" stroke-width="2.4" opacity="0.18"/>
+                  <rect x="190" y="436" width="160" height="8" fill="#e4ddcf"/>
+                  <line x1="204" y1="444" x2="204" y2="512"/><line x1="336" y1="444" x2="336" y2="512"/>
+                  <path d="M150 512V470h24v42M366 512V470h24v42" fill="none"/>
+                  <path d="M96 512c0-30 10-40 14-48 4 8 14 18 14 48" fill="#dfe6d6"/>
+                </g>
+
+                <!-- 3 meses: transbordo, poça e fachada manchada -->
+                <g class="dc-l1">
+                  <rect x="513" y="151" width="24" height="12" fill="#3f86c9" opacity="0.45"/>
+                  <path d="M392 148Q452 141 512 146V148Z" fill="#3f86c9" opacity="0.4"/>
+                  <rect x="560" y="106" width="9" height="240" fill="url(#dc-streak)"/>
+                  <path class="dc-flow" d="M562 104C569 112 568 140 566 172S563 236 565 300" fill="none" stroke="#3f86c9" stroke-width="2.6" stroke-linecap="round"/>
+                  <circle class="dc-drip dc-drip--facade" cx="566" cy="300" r="2.4" fill="#3f86c9"/>
+                </g>
+
+                <!-- 1 ano: a água atravessa a laje -->
+                <g class="dc-l2">
+                  <g stroke="#3f86c9" stroke-width="1.6" stroke-dasharray="2 4" opacity="0.8">
+                    <line x1="470" y1="150" x2="468" y2="170"/><line x1="486" y1="150" x2="487" y2="170"/><line x1="502" y1="150" x2="500" y2="170"/>
+                  </g>
+                  <ellipse class="dc-stain" cx="474" cy="177" rx="84" ry="15" fill="url(#dc-stain)"/>
+                  <ellipse cx="531" cy="206" rx="9" ry="34" fill="url(#dc-stain)"/>
+                  <g fill="#4f5b4a" opacity="0.55">
+                    <circle cx="420" cy="176" r="1.6"/><circle cx="436" cy="181" r="1.2"/><circle cx="512" cy="182" r="1.5"/><circle cx="526" cy="236" r="1.3"/><circle cx="452" cy="184" r="1"/><circle cx="534" cy="226" r="1.6"/>
+                  </g>
+                  <circle class="dc-drip dc-drip--ceiling" cx="472" cy="186" r="2.6" fill="#3f86c9"/>
+                  <circle class="dc-drip dc-drip--ceiling dc-drip--late" cx="472" cy="186" r="2.2" fill="#3f86c9"/>
+                  <path d="M454 306H490L486 328H458Z" fill="#c9d6df" stroke="#2a3439" stroke-width="1.2"/>
+                  <ellipse cx="472" cy="307" rx="17" ry="2.6" fill="#3f86c9" opacity="0.5"/>
+                </g>
+
+                <!-- 3 anos: concreto se solta, andaime e calçada interditada -->
+                <g class="dc-l3">
+                  <ellipse cx="452" cy="182" rx="130" ry="24" fill="url(#dc-stain)"/>
+                  <path d="M430 171l12 6-6 5 14 4M498 171l-6 8 10 4-4 7" fill="none" stroke="#c4554f" stroke-width="1.4"/>
+                  <path d="M560 176l-6 14 5 9-7 17 4 12-5 20" fill="none" stroke="#c4554f" stroke-width="1.6"/>
+                  <path d="M560 176L549 182 546 196 550 208 545 222 549 236 546 248H560Z" fill="#f1ece2" stroke="#2a3439" stroke-width="1"/>
+                  <line x1="553" y1="178" x2="553" y2="248" stroke="#b5562a" stroke-width="3"/>
+                  <g fill="#b5562a"><circle cx="557" cy="190" r="2.6"/><circle cx="557" cy="214" r="2.6"/><circle cx="557" cy="238" r="2.6"/></g>
+                  <rect x="548" y="248" width="12" height="110" fill="url(#dc-rust)"/>
+                  <path d="M414 326l8-6 7 3 4 4z M432 327l5-4 6 2z" fill="#d8d1c3" stroke="#2a3439" stroke-width="0.8"/>
+                  <g class="dc-fragments" fill="#d8d1c3" stroke="#2a3439" stroke-width="0.8">
+                    <path class="dc-frag" d="M566 230l11-5 6 9-9 7z"/>
+                    <path class="dc-frag dc-frag--2" d="M574 244l8-3 5 7-8 4z"/>
+                    <path class="dc-frag dc-frag--3" d="M564 254l9-2 3 8-9 2z"/>
+                  </g>
+                  <path d="M600 516l6-4 5 3-4 2zM622 517l4-3 4 3zM586 517l5-2 3 2z" fill="#d8d1c3" stroke="#2a3439" stroke-width="0.8"/>
+                  <g class="dc-scaffold" stroke="#8c969b" stroke-width="1.6">
+              <line x1="580" y1="96" x2="580" y2="520"/>
+              <line x1="636" y1="96" x2="636" y2="520"/>
+              <line x1="574" y1="120" x2="642" y2="120"/>
+              <line x1="574" y1="190" x2="642" y2="190"/>
+              <line x1="574" y1="260" x2="642" y2="260"/>
+              <line x1="574" y1="330" x2="642" y2="330"/>
+              <line x1="574" y1="400" x2="642" y2="400"/>
+              <line x1="574" y1="470" x2="642" y2="470"/>
+              <line x1="580" y1="120" x2="636" y2="190"/>
+              <line x1="636" y1="190" x2="580" y2="260"/>
+              <line x1="580" y1="260" x2="636" y2="330"/>
+              <line x1="636" y1="330" x2="580" y2="400"/>
+              <line x1="580" y1="400" x2="636" y2="470"/>
+              <line class="dc-board" x1="562" y1="187" x2="640" y2="187"/>
+              <line class="dc-board" x1="562" y1="327" x2="640" y2="327"/>
+              <line class="dc-board" x1="562" y1="467" x2="640" y2="467"/>
+                  </g>
+                  <rect x="572" y="486" width="188" height="9" fill="url(#dc-tape)" stroke="#2a3439" stroke-width="0.6"/>
+                  <line x1="576" y1="480" x2="576" y2="520" stroke="#2a3439" stroke-width="1.6"/>
+                  <line x1="756" y1="480" x2="756" y2="520" stroke="#2a3439" stroke-width="1.6"/>
+                  <path d="M690 436L704 460H676Z" fill="#efad52" stroke="#2a3439" stroke-width="1.2"/>
+                  <text x="690" y="456" text-anchor="middle" font-size="13" font-weight="800" fill="#2a3439">!</text>
+                </g>
+
+                <!-- Legendas técnicas -->
+                <g class="dc-labels" font-size="9.5" letter-spacing="1.2" fill="#6b767b">
+                  <text x="56" y="138">LAJE DE COBERTURA</text>
+                  <text x="56" y="190">APARTAMENTO DA COBERTURA</text>
+                  <text x="440" y="122">CALHA</text>
+                  <path d="M470 125L516 150" stroke="#6b767b" stroke-width="0.8" fill="none"/>
+                  <text x="586" y="365">FACHADA</text>
+                  <path d="M584 361H562" stroke="#6b767b" stroke-width="0.8" fill="none"/>
+                </g>
+              </svg>
+
+              <div class="decay-reminder" aria-hidden="true">
+                <span class="decay-reminder-brand">Lembrete do Fremon</span>
+                <strong>Limpeza das calhas e condutores</strong>
+                <span class="decay-reminder-chip">vence em 7 dias</span>
+              </div>
+            </div>
+
+            <div class="decay-panel">
+              <p class="decay-when" data-decay-when>Hoje</p>
+              <h3 class="decay-title" data-decay-title>Folhas entupindo a calha</h3>
+              <p class="decay-cost"><strong data-decay-cost>R$ 800</strong></p>
+              <p class="decay-fix"><small>Para resolver</small><span data-decay-fix>Limpeza das calhas</span></p>
+              <p class="sr-only" aria-live="polite" data-decay-live></p>
+            </div>
+
+            <div class="decay-timeline">
+              <input type="range" min="0" max="300" step="1" value="0" data-decay-range aria-label="Tempo sem limpar a calha" aria-valuetext="Hoje: limpeza das calhas, R$ 800" />
+              <div class="decay-ticks">
+                <button type="button" data-decay-stage="0" data-when="Hoje" data-title="Folhas entupindo a calha" data-fix="Limpeza das calhas" data-cost="800">Hoje</button>
+                <button type="button" data-decay-stage="1" data-when="3 meses depois" data-title="A chuva transborda pela fachada" data-fix="Pintura e vedação da fachada" data-cost="6000">3 meses</button>
+                <button type="button" data-decay-stage="2" data-when="1 ano depois" data-title="A água atravessa a laje" data-fix="Nova impermeabilização e reparo do apartamento" data-cost="40000">1 ano</button>
+                <button type="button" data-decay-stage="3" data-when="3 anos depois" data-title="O concreto começa a se soltar" data-fix="Recuperação estrutural, andaime e calçada interditada" data-cost="150000">3 anos</button>
+              </div>
+              <p class="decay-hint" aria-hidden="true">Arraste o tempo →</p>
+            </div>
+          </div>
+
+          <div class="decay-foot reveal">
+            <p><strong>No Fremon, isso é um lembrete de R$ 800</strong>, com prazo, responsável e comprovante.</p>
+            <a class="arrow-link" href="#diagnostico">Fazer o diagnóstico do meu prédio <span>↗</span></a>
+          </div>
+          <p class="decay-disclaimer">Exemplo ilustrativo. Valores em ordem de grandeza para um prédio residencial de médio porte; cada caso depende do porte, do acesso e da extensão do dano.</p>
+        </div>
+      </section>
+
+      <section class="section sitter-section" id="prevencao" aria-labelledby="sitter-title">
+        <div class="container sitter-layout">
+          <div class="sitter-copy reveal">
+            <p class="eyebrow eyebrow--inverse"><span></span> O valor da prevenção</p>
+            <h2 id="sitter-title">O problema adiado não fica parado. Ele muda de escala.</h2>
+            <p>
+              A Lei de Sitter é uma referência conhecida na engenharia para visualizar como o custo relativo de uma intervenção tende a crescer quando o problema avança de projeto para manutenção corretiva.
+            </p>
+            <p class="sitter-note">A proporção é uma referência conceitual, não uma previsão de custo para todo caso real.</p>
+          </div>
+
+          <div class="sitter-chart reveal" data-sitter-chart>
+            <div class="sitter-axis" aria-hidden="true"><span>CUSTO RELATIVO</span><i></i></div>
+            <ol>
+              <li style="--height: 12%">
+                <div class="sitter-value"><strong>1</strong><span>×</span></div>
+                <i class="sitter-bar"></i>
+                <div><small>01 · PROJETO</small><strong>Decidir cedo</strong><p>Ajustes antes que o risco seja incorporado.</p></div>
+              </li>
+              <li style="--height: 26%">
+                <div class="sitter-value"><strong>5</strong><span>×</span></div>
+                <i class="sitter-bar"></i>
+                <div><small>02 · EXECUÇÃO</small><strong>Corrigir durante</strong><p>Intervenção ainda coordenada e previsível.</p></div>
+              </li>
+              <li style="--height: 50%">
+                <div class="sitter-value"><strong>25</strong><span>×</span></div>
+                <i class="sitter-bar"></i>
+                <div><small>03 · PREVENÇÃO</small><strong>Manter antes da falha</strong><p>Histórico e rotina reduzem improvisos.</p></div>
+              </li>
+              <li class="is-critical" style="--height: 100%">
+                <div class="sitter-value"><strong>125</strong><span>×</span></div>
+                <i class="sitter-bar"></i>
+                <div><small>04 · CORREÇÃO</small><strong>Responder à emergência</strong><p>Mais impacto, urgência e alternativas reduzidas.</p></div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="sitter-conclusion reveal">
+            <span>PREVENÇÃO NA PRÁTICA</span>
+            <p>O Fremon não promete eliminar imprevistos. Ele cria as condições para identificar sinais, registrar decisões e agir com mais antecedência.</p>
+            <a class="arrow-link arrow-link--inverse" href="#contato">Avaliar a maturidade técnica do meu condomínio <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section check-section" id="diagnostico" aria-labelledby="check-title">
+        <div class="container check-layout">
+          <div class="check-copy reveal">
+            <p class="eyebrow"><span></span> Diagnóstico em 1 minuto</p>
+            <h2 id="check-title">Seu condomínio está <em>em dia?</em></h2>
+            <p>
+              Seis perguntas que todo síndico deveria responder sem abrir uma gaveta. O resultado aparece na hora, aqui mesmo. Nada é enviado sem você pedir.
+            </p>
+            <p class="check-disclaimer">Referência geral. Prazos e exigências variam conforme o estado, o município e o tipo de edificação.</p>
+          </div>
+
+          <form class="check-card reveal" data-reveal-delay="2" data-check novalidate>
+            <div class="check-progress" aria-hidden="true"><span data-check-bar></span></div>
+            <p class="check-count" data-check-count>0 de 6 respondidas</p>
+              <fieldset class="check-q" data-check-question="avcb" data-check-short="AVCB" data-check-why="Sem o auto do Corpo de Bombeiros válido, o condomínio fica sujeito a multa e interdição, e o seguro pode questionar a cobertura.">
+                <legend><span>01</span>O AVCB (ou CLCB) do prédio está válido?</legend>
+                <div class="check-options"><label><input type="radio" name="avcb" value="sim" /><span>Sim</span></label><label><input type="radio" name="avcb" value="nao" /><span>Não</span></label><label><input type="radio" name="avcb" value="nsei" /><span>Não sei</span></label></div>
+              </fieldset>
+              <fieldset class="check-q" data-check-question="spda" data-check-short="Para-raios (SPDA)" data-check-why="A NBR 5419 pede inspeções periódicas com registro. Sem laudo, não há como provar que o sistema protege.">
+                <legend><span>02</span>O para-raios (SPDA) tem inspeção e laudo dentro do prazo?</legend>
+                <div class="check-options"><label><input type="radio" name="spda" value="sim" /><span>Sim</span></label><label><input type="radio" name="spda" value="nao" /><span>Não</span></label><label><input type="radio" name="spda" value="nsei" /><span>Não sei</span></label></div>
+              </fieldset>
+              <fieldset class="check-q" data-check-question="plano" data-check-short="Plano de manutenção" data-check-why="A NBR 5674 exige um programa de manutenção e o registro do que foi feito. É a primeira coisa pedida quando algo dá errado.">
+                <legend><span>03</span>Existe um plano de manutenção preventiva escrito e com as execuções registradas?</legend>
+                <div class="check-options"><label><input type="radio" name="plano" value="sim" /><span>Sim</span></label><label><input type="radio" name="plano" value="nao" /><span>Não</span></label><label><input type="radio" name="plano" value="nsei" /><span>Não sei</span></label></div>
+              </fieldset>
+              <fieldset class="check-q" data-check-question="reformas" data-check-short="Reformas nas unidades" data-check-why="A NBR 16280 coloca o síndico no fluxo de aprovação: obra sem plano e responsável técnico vira risco para a estrutura e para ele.">
+                <legend><span>04</span>As reformas dos apartamentos passam por análise com responsável técnico antes da obra?</legend>
+                <div class="check-options"><label><input type="radio" name="reformas" value="sim" /><span>Sim</span></label><label><input type="radio" name="reformas" value="nao" /><span>Não</span></label><label><input type="radio" name="reformas" value="nsei" /><span>Não sei</span></label></div>
+              </fieldset>
+              <fieldset class="check-q" data-check-question="agua" data-check-short="Reservatórios e água" data-check-why="Limpeza periódica e análise de potabilidade são exigências sanitárias, e a saúde dos moradores depende delas.">
+                <legend><span>05</span>A limpeza dos reservatórios e a análise de potabilidade da água estão em dia?</legend>
+                <div class="check-options"><label><input type="radio" name="agua" value="sim" /><span>Sim</span></label><label><input type="radio" name="agua" value="nao" /><span>Não</span></label><label><input type="radio" name="agua" value="nsei" /><span>Não sei</span></label></div>
+              </fieldset>
+              <fieldset class="check-q" data-check-question="memoria" data-check-short="Memória técnica" data-check-why="Sem acervo organizado, cada troca de síndico ou administradora recomeça do zero, e as decisões perdem o contexto.">
+                <legend><span>06</span>Se você deixasse a função amanhã, o próximo síndico encontraria projetos, laudos e contratos num só lugar?</legend>
+                <div class="check-options"><label><input type="radio" name="memoria" value="sim" /><span>Sim</span></label><label><input type="radio" name="memoria" value="nao" /><span>Não</span></label><label><input type="radio" name="memoria" value="nsei" /><span>Não sei</span></label></div>
+              </fieldset>
+            <div class="check-result" data-check-result role="status" aria-live="polite" hidden>
+              <div class="check-score"><strong data-check-score>0</strong><span>de 6<br />em dia</span></div>
+              <div class="check-verdict">
+                <h3 data-check-title></h3>
+                <p data-check-text></p>
+                <ul data-check-list></ul>
+                <p class="check-unknown" data-check-unknown hidden>Não saber também é um sinal: essa informação deveria estar a um clique.</p>
+                <a class="button button--primary" href="#contato" data-check-cta>Levar este diagnóstico para a conversa <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section control-levels" id="niveis" aria-labelledby="levels-title">
+        <div class="container">
+          <div class="section-heading section-heading--split reveal">
+            <div>
+              <p class="eyebrow"><span></span> Um ecossistema, diferentes níveis de controle</p>
+              <h2 id="levels-title">Comece organizando. Evolua até delegar.</h2>
+            </div>
+            <p>O Fremon acompanha a maturidade e a disponibilidade da sua gestão, sem separar tecnologia, inteligência e operação em histórias desconectadas.</p>
+          </div>
+
+          <ol class="level-path reveal">
+            <li>
+              <span>01</span>
+              <div><small>PLATAFORMA</small><h3>Organize e controle</h3><p>Centralize a memória técnica, estruture rotinas e acompanhe tudo que exige atenção.</p></div>
+              <b>Você conduz</b>
+            </li>
+            <li>
+              <span>02</span>
+              <div><small>INTELIGÊNCIA</small><h3>Decida com apoio</h3><p>Receba leitura técnica, acompanhamento e suporte para tratar demandas com método.</p></div>
+              <b>Decidimos juntos</b>
+            </li>
+            <li class="level-path--premium">
+              <span>03</span>
+              <div><small>GESTÃO ATIVA</small><h3>Delegue a cadência</h3><p>Conte com uma equipe atuando sobre a operação técnica dentro do próprio Fremon.</p></div>
+              <b>Nós acompanhamos</b>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section active-management" id="gestao-ativa" aria-labelledby="active-title">
+        <div class="active-management-media" aria-hidden="true">
+          <img src="/assets/photos/final/arquitetura-premium-1200.webp" srcset="/assets/photos/final/arquitetura-premium-800.webp 800w, /assets/photos/final/arquitetura-premium-1200.webp 1200w, /assets/photos/final/arquitetura-premium-1600.webp 1600w" sizes="(max-width: 1050px) 100vw, 57vw" alt="" width="1600" height="1066" loading="lazy" decoding="async" />
+        </div>
+        <div class="container active-layout">
+          <div class="active-copy reveal">
+            <p class="eyebrow eyebrow--copper"><span></span> Gestão Ativa Fremon · Camada premium</p>
+            <h2 id="active-title">A tecnologia organiza.<br /><em>A Gestão Ativa acompanha.</em></h2>
+            <p>
+              Para quem não quer apenas visualizar a gestão técnica, mas contar com uma equipe mantendo sua cadência: visitando, registrando, priorizando e acompanhando demandas pelo Fremon.
+            </p>
+            <div class="active-price"><small>INVESTIMENTO A PARTIR DE</small><strong><sup>R$</sup> 1.500<small>/mês</small></strong><span>integrada à plataforma</span></div>
+            <div class="button-row">
+              <a class="button button--copper" href="#contato">Conhecer a Gestão Ativa</a>
+              <a class="text-link text-link--inverse" href="#gestao-fluxo">Entender como funciona ↓</a>
+            </div>
+          </div>
+
+          <div class="active-operation reveal" id="gestao-fluxo" data-reveal-delay="2">
+            <div class="operation-head"><small>CICLO CONTÍNUO</small><span><i></i> Operação acompanhada</span></div>
+            <ol>
+              <li><span>01</span><div><strong>Visitar e observar</strong><small>Presença técnica, checklist digital e evidências fotográficas.</small></div></li>
+              <li><span>02</span><div><strong>Priorizar e organizar</strong><small>Riscos, pendências e próximos passos com responsáveis definidos.</small></div></li>
+              <li><span>03</span><div><strong>Apoiar e acompanhar</strong><small>Orçamentos, demandas e comunicação com os envolvidos.</small></div></li>
+              <li><span>04</span><div><strong>Reportar e planejar</strong><small>Balanço executivo e planejamento dos próximos períodos.</small></div></li>
+            </ol>
+            <p><b>Importante:</b> a Gestão Ativa governa e acompanha a operação. Não substitui empresas executoras nem presume a execução direta de todos os serviços.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section plans-section" id="planos" aria-labelledby="plans-title">
+        <div class="container">
+          <div class="section-heading plans-heading reveal">
+            <p class="eyebrow"><span></span> Níveis de governança</p>
+            <h2 id="plans-title">Encontre o nível certo para o seu <em>condomínio.</em></h2>
+            <p>Os planos evoluem do acervo técnico à inteligência acompanhada. Diga quem você representa e quantas unidades o prédio tem: mostramos a recomendação inicial e quanto ela representa por apartamento.</p>
+          </div>
+
+          <div class="profile-selector reveal" data-profile-selector>
+            <span>Eu represento:</span>
+            <div role="group" aria-label="Selecione seu perfil">
+              <button type="button" class="is-active" aria-pressed="true" data-profile="sindico">Um condomínio</button>
+              <button type="button" aria-pressed="false" data-profile="profissional">Vários condomínios</button>
+              <button type="button" aria-pressed="false" data-profile="administradora">Uma administradora</button>
+              <button type="button" aria-pressed="false" data-profile="residencia">Uma residência</button>
+              <button type="button" aria-pressed="false" data-profile="portfolio">Um portfólio corporativo</button>
+            </div>
+          </div>
+
+          <div class="plan-recommendation reveal" aria-live="polite" data-plan-recommendation>
+            <span>RECOMENDAÇÃO INICIAL</span>
+            <p><strong>Intelligence</strong> para reunir controle preventivo e apoio técnico em uma operação condominial completa.</p>
+            <a href="#contato">Validar esta recomendação ↗</a>
+          </div>
+
+          <div class="plan-units reveal" data-plan-units>
+            <label class="plan-units-label" for="plan-units-range">
+              <span>Unidades no condomínio</span>
+              <output id="plan-units-value" for="plan-units-range" data-units-output>96</output>
+            </label>
+            <input type="range" id="plan-units-range" min="8" max="400" step="1" value="96" data-units-range aria-describedby="plan-units-hint" />
+            <p id="plan-units-hint">O valor-base de cada plano dividido pelas unidades: uma referência do rateio na taxa condominial.</p>
+          </div>
+
+          <div class="plan-journey reveal">
+            <article class="plan-card" data-plan-card="archive">
+              <div class="plan-card-head"><span>01</span><b class="plan-level" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i></b><small>BASE DOCUMENTAL</small></div>
+              <h3>Archive</h3>
+              <p class="plan-purpose">A memória técnica deixa de depender de pastas e pessoas.</p>
+              <p class="plan-price"><small>A partir de</small><strong><sup>R$</sup> 249</strong><span>/mês</span></p>
+              <p class="plan-per-unit">a partir de ≈ <strong data-per-unit="249">R$ 2,59</strong> por unidade/mês</p>
+              <p class="plan-fit"><small>Ideal para</small> quem precisa primeiro reunir projetos, laudos e contratos.</p>
+              <ul><li>Projetos e documentos centralizados</li><li>Busca inteligente por disciplina</li><li>Histórico técnico permanente</li></ul>
+              <a href="#contato">Começar pelo acervo <span>↗</span></a>
+            </article>
+
+            <article class="plan-card" data-plan-card="compliance">
+              <div class="plan-card-head"><span>02</span><b class="plan-level" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i></i><i></i></b><small>ROTINA PREVENTIVA</small></div>
+              <h3>Compliance</h3>
+              <p class="plan-purpose">Documentação e manutenção preventiva sob a mesma rotina.</p>
+              <p class="plan-price"><small>A partir de</small><strong><sup>R$</sup> 449</strong><span>/mês</span></p>
+              <p class="plan-per-unit">a partir de ≈ <strong data-per-unit="449">R$ 4,68</strong> por unidade/mês</p>
+              <p class="plan-fit"><small>Ideal para</small> prédios que querem cumprir prazos e manutenções sem sustos.</p>
+              <ul><li>Tudo do Archive</li><li>Calendário de manutenção preventiva</li><li>Acompanhamento de prazos</li></ul>
+              <a href="#contato">Estruturar a prevenção <span>↗</span></a>
+            </article>
+
+            <article class="plan-card plan-card--featured is-recommended" data-plan-card="intelligence">
+              <div class="plan-ribbon">MAIS RECOMENDADO</div>
+              <div class="plan-card-head"><span>03</span><b class="plan-level" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i></i></b><small>INTELIGÊNCIA TÉCNICA</small></div>
+              <h3>Intelligence</h3>
+              <p class="plan-purpose">A plataforma conectada à leitura técnica para decisões mais seguras.</p>
+              <p class="plan-price"><small>A partir de</small><strong><sup>R$</sup> 890</strong><span>/mês</span></p>
+              <p class="plan-per-unit">a partir de ≈ <strong data-per-unit="890">R$ 9,27</strong> por unidade/mês</p>
+              <p class="plan-fit"><small>Ideal para</small> síndicos que querem apoio técnico nas decisões e nas reformas.</p>
+              <ul><li>Tudo do Compliance</li><li>Análise técnica de reformas</li><li>Inspeção predial anual</li></ul>
+              <a href="#contato">Ver o Intelligence na prática <span>↗</span></a>
+            </article>
+
+            <article class="plan-card plan-card--dark" data-plan-card="black">
+              <div class="plan-card-head"><span>04</span><b class="plan-level" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i></b><small>GOVERNANÇA AMPLIADA</small></div>
+              <h3>Black</h3>
+              <p class="plan-purpose">Mais presença, acompanhamento e apoio sobre a operação técnica.</p>
+              <p class="plan-price"><small>A partir de</small><strong><sup>R$</sup> 1.290</strong><span>/mês</span></p>
+              <p class="plan-per-unit">a partir de ≈ <strong data-per-unit="1290">R$ 13,44</strong> por unidade/mês</p>
+              <p class="plan-fit"><small>Ideal para</small> prédios que preferem engenharia presente e acompanhamento contínuo.</p>
+              <ul><li>Tudo do Intelligence</li><li>Visitas presenciais programadas</li><li>Apoio em orçamentos e fiscalização</li></ul>
+              <a href="#contato">Avaliar o plano Black <span>↗</span></a>
+            </article>
+          </div>
+
+          <p class="price-disclaimer reveal">
+            Valores-base mensais para referência comercial. Escopo, implantação e investimento final variam conforme porte, quantidade de entidades e nível de acompanhamento. Gestão Ativa disponível a partir de R$ 1.500/mês.
+          </p>
+
+          <div class="special-plans reveal">
+            <article>
+              <figure class="special-photo"><img src="/assets/photos/final/arquitetura-continuidade-700.webp" srcset="/assets/photos/final/arquitetura-continuidade-700.webp 700w, /assets/photos/final/arquitetura-continuidade-1200.webp 1200w" sizes="(max-width: 820px) 90vw, 22vw" alt="Residência contemporânea em concreto aparente, madeira e vidro" width="700" height="1043" loading="lazy" decoding="async" /><figcaption>Imagem ilustrativa</figcaption></figure>
+              <span>FREMON PRIVATE</span>
+              <div><h3>Governança discreta para residências de alto padrão.</h3><p>Acervo residencial, cronograma preventivo e histórico técnico para preservar valor e continuidade.</p></div>
+              <p class="special-price"><small>Investimento</small><strong>Sob avaliação</strong></p>
+              <a class="arrow-link" href="#contato">Avaliar minha residência <span>↗</span></a>
+            </article>
+            <article>
+              <figure class="special-photo"><img src="/assets/photos/final/torre-residencial-720.webp" alt="Torre residencial vista de baixo, com fachada em tijolo e varandas" width="720" height="1280" loading="lazy" decoding="async" /></figure>
+              <span>FREMON INSTITUCIONAL</span>
+              <div><h3>Controle comparável para portfólios e administradoras.</h3><p>Múltiplos ativos em uma leitura central, com governança adaptada à escala da operação.</p></div>
+              <p class="special-price"><small>Investimento</small><strong>Sob avaliação</strong></p>
+              <a class="arrow-link" href="#contato">Desenhar minha operação <span>↗</span></a>
+            </article>
+          </div>
+
+          <details class="plan-comparison reveal">
+            <summary>Comparar recursos essenciais dos planos <span>+</span></summary>
+            <div class="comparison-scroll">
+              <table>
+                <caption>Comparação resumida dos planos Fremon</caption>
+                <thead><tr><th scope="col">Recurso</th><th scope="col">Archive</th><th scope="col">Compliance</th><th scope="col">Intelligence</th><th scope="col">Black</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Projetos e documentos</th><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td></tr>
+                  <tr><th scope="row">Busca por disciplina</th><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td></tr>
+                  <tr><th scope="row">Manutenção preventiva</th><td class="is-no">Não incluído</td><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td></tr>
+                  <tr><th scope="row">Análise de reformas</th><td class="is-no">Não incluído</td><td class="is-no">Não incluído</td><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td></tr>
+                  <tr><th scope="row">Inspeção predial anual</th><td class="is-no">Não incluído</td><td class="is-no">Não incluído</td><td class="is-yes">Incluído</td><td class="is-yes">Incluído</td></tr>
+                  <tr><th scope="row">Visitas presenciais</th><td class="is-no">Não incluído</td><td class="is-no">Não incluído</td><td class="is-no">Não incluído</td><td class="is-yes">Incluído</td></tr>
+                  <tr><th scope="row">Orçamentos e fiscalização</th><td class="is-no">Não incluído</td><td class="is-no">Não incluído</td><td class="is-no">Não incluído</td><td class="is-yes">Incluído</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="section trust-section implant-section" id="implantacao" aria-labelledby="trust-title">
+        <div class="container implant-layout">
+          <div class="implant-visual reveal">
+            <figure class="implant-photo">
+              <img src="/assets/photos/final/inspecao-fachada-600.webp" srcset="/assets/photos/final/inspecao-fachada-600.webp 600w, /assets/photos/final/inspecao-fachada-1100.webp 1100w" sizes="(max-width: 1050px) 92vw, 34vw" alt="Engenheiro de capacete, com um tablet na mão, inspecionando a fachada de um edifício residencial" width="600" height="1075" loading="lazy" decoding="async" />
+              <figcaption>Imagem ilustrativa</figcaption>
+            </figure>
+            <div class="implant-badge">
+              <span aria-hidden="true">✓</span>
+              <p><strong>Implantação orientada</strong> pela engenharia que criou o Fremon</p>
+            </div>
+            <figure class="phone">
+              <div class="phone-screen">
+                <img src="/assets/product/final/mobile-sindico-210.webp" srcset="/assets/product/final/mobile-sindico-140.webp 140w, /assets/product/final/mobile-sindico-210.webp 210w, /assets/product/final/mobile-sindico-260.webp 260w, /assets/product/final/mobile-sindico-320.webp 320w, /assets/product/final/mobile-sindico-420.webp 420w, /assets/product/final/mobile-sindico-630.webp 630w" sizes="(max-width: 600px) 134px, (max-width: 1050px) 154px, (max-width: 1440px) 200px, 208px" alt="Painel do condomínio no celular do síndico: foto do prédio, próximo prazo e 90% do plano de manutenção sem atraso" width="300" height="649" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>O síndico acompanha pelo celular</figcaption>
+            </figure>
+          </div>
+
+          <div class="implant-copy">
+            <div class="reveal">
+              <p class="eyebrow"><span></span> Implantação e suporte</p>
+              <h2 id="trust-title">Implantar o Fremon é organizar a continuidade, <em>não criar mais uma tarefa.</em></h2>
+              <p class="implant-intro">Você não começa do zero nem sozinho: a equipe estrutura o ponto de partida, libera os acessos e acompanha a adoção até o Fremon virar rotina do prédio.</p>
+            </div>
+
+            <ol class="implant-steps reveal" data-reveal-delay="1">
+              <li>
+                <span class="implant-step-n" aria-hidden="true">01</span>
+                <div>
+                  <h3>Implantação orientada</h3>
+                  <p>Levantamos o acervo que já existe, organizamos os sistemas do prédio e definimos as prioridades para começar com contexto.</p>
+                </div>
+              </li>
+              <li>
+                <span class="implant-step-n" aria-hidden="true">02</span>
+                <div>
+                  <h3>Acessos por perfil</h3>
+                  <p>Cada pessoa entra com o próprio acesso e vê só o que lhe cabe. Os acessos são criados pela equipe Fremon, não por planilha compartilhada.</p>
+                  <ul class="implant-roles" aria-label="Perfis de acesso">
+                    <li>Síndico</li><li>Administradora</li><li>Engenharia</li><li>Profissional técnico</li><li>Proprietário</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <span class="implant-step-n" aria-hidden="true">03</span>
+                <div>
+                  <h3>Histórico e rastreabilidade</h3>
+                  <p>Execuções, fotos, comprovantes e decisões ficam ligados ao item e a quem fez, e continuam lá quando a gestão muda.</p>
+                </div>
+              </li>
+              <li>
+                <span class="implant-step-n" aria-hidden="true">04</span>
+                <div>
+                  <h3>Treinamento e suporte</h3>
+                  <p>A equipe treina quem vai usar e acompanha a adoção para transformar a plataforma em rotina.</p>
+                </div>
+              </li>
+            </ol>
+
+            <p class="implant-note reveal"><span>Transparência</span> Detalhes sobre infraestrutura, backups, política de acesso e atendimento são apresentados na demonstração, conforme o escopo contratado.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="perguntas" aria-labelledby="faq-title">
+        <div class="container faq-layout">
+          <div class="faq-heading reveal">
+            <p class="eyebrow"><span></span> Perguntas frequentes</p>
+            <h2 id="faq-title">Antes de colocar o prédio <em>sob controle.</em></h2>
+            <p>Se a sua realidade não estiver contemplada aqui, a apresentação personalizada começa justamente por ela.</p>
+            <aside class="faq-help" aria-label="Fale com a equipe">
+              <img src="/assets/brand/fremasa-logo.png" alt="FREMASA Engenharia" width="150" height="55" loading="lazy" decoding="async" />
+              <p class="faq-help-title">Ainda com dúvida?</p>
+              <p>Fale direto com a equipe de engenharia que criou o Fremon.</p>
+              <a class="button button--primary faq-help-whatsapp" href="https://wa.me/5511973377172?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Fremon%20para%20o%20meu%20condom%C3%ADnio." target="_blank" rel="noreferrer">Perguntar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+              <a class="faq-help-mail" href="mailto:leandro@fremasa.com.br">ou escreva para leandro@fremasa.com.br</a>
+            </aside>
+          </div>
+          <div class="faq-list reveal" data-reveal-delay="2">
+            <details open><summary>Faz sentido para um condomínio só?<span>+</span></summary><p>Sim. O Fremon foi desenhado a partir do prédio: cada condomínio tem o seu painel, os seus sistemas, prazos e documentos. A visão de carteira é um complemento para quem cuida de vários.</p></details>
+            <details><summary>O Fremon substitui a administradora do condomínio?<span>+</span></summary><p>Não. O Fremon cria a infraestrutura de governança técnica que conecta síndico, administradora, engenharia e fornecedores. Ele complementa a gestão administrativa com controle técnico e continuidade da informação.</p></details>
+            <details><summary>Preciso ter todos os documentos organizados para começar?<span>+</span></summary><p>Não. A implantação existe para estruturar o ponto de partida, identificar lacunas e definir prioridades. O acervo pode ganhar qualidade progressivamente dentro de uma lógica única.</p></details>
+            <details><summary>Funciona no celular?<span>+</span></summary><p>Sim. O Fremon roda no navegador, no computador ou no celular, sem instalar nada. O síndico acompanha o prédio de onde estiver.</p></details>
+            <details><summary>Quem do condomínio pode acessar?<span>+</span></summary><p>Cada pessoa entra com o próprio perfil (síndico, administradora, engenharia, profissional técnico ou proprietário) e vê e faz apenas o que cabe ao seu papel. Os acessos são criados de forma centralizada pela equipe Fremon.</p></details>
+            <details><summary>Consigo gerenciar mais de um condomínio?<span>+</span></summary><p>Sim. A visão de portfólio foi pensada para síndicos profissionais, administradoras e operações com múltiplas entidades, mantendo o detalhamento de cada patrimônio.</p></details>
+            <details><summary>Qual é a diferença entre a plataforma e a Gestão Ativa?<span>+</span></summary><p>A plataforma organiza e torna a operação rastreável. A Gestão Ativa adiciona uma equipe que visita, registra, prioriza, apoia e acompanha demandas usando o próprio Fremon como ambiente de trabalho.</p></details>
+            <details><summary>A Gestão Ativa executa todas as manutenções?<span>+</span></summary><p>Não. Sua função é governar, organizar e acompanhar a operação técnica. Empresas especializadas e fornecedores continuam responsáveis pelas execuções contratadas.</p></details>
+            <details><summary>Como escolher o plano correto?<span>+</span></summary><p>A recomendação considera maturidade do acervo, porte, quantidade de entidades e nível de apoio desejado. A demonstração inclui uma leitura inicial para evitar contratação acima ou abaixo da necessidade.</p></details>
+            <details><summary>O Fremon atende residências de alto padrão?<span>+</span></summary><p>Sim. O Fremon Private adapta a lógica de acervo, manutenção preventiva e memória técnica para propriedades residenciais que exigem discrição e preservação patrimonial.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contato" aria-labelledby="contact-title">
+        <div class="contact-background" aria-hidden="true">
+          <img src="/assets/photos/final/fachada-noturna-1600.webp" alt="" width="1600" height="900" loading="lazy" decoding="async" />
+        </div>
+        <div class="container contact-layout">
+          <div class="contact-copy reveal">
+            <p class="eyebrow eyebrow--copper"><span></span> Apresentação personalizada</p>
+            <h2 id="contact-title">Comece pela realidade do seu prédio.</h2>
+            <p>
+              Em uma conversa objetiva, mostramos o Fremon em funcionamento e avaliamos qual nível de governança faz sentido para seu condomínio ou portfólio.
+            </p>
+            <ol>
+              <li><span>01</span> Entendemos o cenário atual</li>
+              <li><span>02</span> Demonstramos os fluxos relevantes</li>
+              <li><span>03</span> Indicamos o próximo passo possível</li>
+            </ol>
+            <p class="contact-no-pressure">Sem compromisso de contratação. A reunião parte das suas prioridades.</p>
+          </div>
+
+          <form class="contact-form reveal" data-demo-form method="post" novalidate data-reveal-delay="2">
+            <div class="form-heading"><span>AGENDAR APRESENTAÇÃO</span><p>Leva menos de 2 minutos.</p></div>
+            <div class="form-grid">
+              <label class="field field--full"><span>Nome completo</span><input type="text" name="name" autocomplete="name" maxlength="120" required placeholder="Como podemos chamar você?" /><small class="field-error">Informe seu nome.</small></label>
+              <label class="field"><span>E-mail profissional</span><input type="email" name="email" autocomplete="email" maxlength="254" required placeholder="nome@empresa.com.br" /><small class="field-error">Informe um e-mail válido.</small></label>
+              <label class="field"><span>WhatsApp</span><input type="tel" name="phone" autocomplete="tel" maxlength="20" required inputmode="tel" placeholder="(11) 99999-9999" /><small class="field-error">Informe seu telefone.</small></label>
+              <label class="field"><span>Seu perfil</span><select name="profile" required><option value="">Selecione</option><option>Síndico</option><option>Síndico profissional</option><option>Administradora</option><option>Proprietário de residência</option><option>Gestor de portfólio</option><option>Outro</option></select><small class="field-error">Selecione seu perfil.</small></label>
+              <label class="field"><span>Patrimônios sob gestão</span><select name="assets" required><option value="">Selecione</option><option>1</option><option>2 a 5</option><option>6 a 20</option><option>Mais de 20</option></select><small class="field-error">Selecione uma opção.</small></label>
+              <label class="field field--full"><span>O que você mais precisa organizar?</span><textarea name="challenge" rows="3" maxlength="1000" placeholder="Ex.: documentos, manutenções, reformas ou múltiplos condomínios"></textarea></label>
+            </div>
+            <label class="consent"><input type="checkbox" name="consent" required /><span>Autorizo o contato da equipe Fremon sobre esta solicitação.</span></label>
+            <button class="button button--primary button--full" type="submit">Solicitar apresentação personalizada <span>↗</span></button>
+            <p class="form-privacy">Seus dados serão usados somente para responder a esta solicitação, conforme a <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
+            <div class="form-success" role="status" tabindex="-1" hidden>
+              <span>✓</span><div><strong>Solicitação preparada.</strong><p>Para concluir agora, envie os dados à equipe Fremon pelo WhatsApp.</p><a class="button button--primary" data-whatsapp-submit href="https://wa.me/5511973377172" target="_blank" rel="noreferrer">Concluir pelo WhatsApp ↗</a></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="mobile-cta" data-mobile-cta>
+      <button type="button" class="mobile-cta-guide" aria-controls="mobile-navigation" aria-expanded="false" data-guide-toggle>
+        <span class="mobile-cta-guide-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="mobile-cta-guide-count" data-guide-count aria-hidden="true">01/10</span>
+        <span class="sr-only">Abrir o guia da página</span>
+      </button>
+      <a class="button button--primary" href="#contato"><span class="label-long">Agendar apresentação</span><span class="label-short">Agendar</span></a>
+      <a class="mobile-cta-whatsapp" href="https://wa.me/5511973377172?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20o%20Fremon%20para%20o%20meu%20condom%C3%ADnio." target="_blank" rel="noreferrer" aria-label="Conversar pelo WhatsApp (abre em nova aba)">WhatsApp</a>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="#inicio" aria-label="Fremon, voltar ao início">
+            <img src="/assets/brand/fremon-symbol.svg" alt="" width="46" height="46" />
+            <span class="brand-copy"><strong>Fremon</strong><small>Governança técnica</small></span>
+          </a>
+          <p>A memória técnica permanente de edificações que não podem operar no improviso.</p>
+          <a class="footer-origin" href="https://fremasa.com.br/" target="_blank" rel="noopener" aria-label="Grupo FREMASA: abrir fremasa.com.br em nova aba">
+            <small>UMA TECNOLOGIA COM ORIGEM NO</small>
+            <img src="/assets/brand/fremasa-logo.png" alt="" width="150" height="55" loading="lazy" />
+          </a>
+        </div>
+        <div class="footer-nav"><span>EXPLORAR</span><a href="#plataforma">Plataforma</a><a href="#engenharia">Engenharia</a><a href="#diagnostico">Diagnóstico do condomínio</a><a href="#gestao-ativa">Gestão Ativa</a><a href="#planos">Planos</a><a href="https://fremasa.com.br/" target="_blank" rel="noopener">FREMASA Engenharia ↗</a></div>
+        <div class="footer-nav"><span>CONVERSAR</span><a href="#contato">Agendar apresentação</a><a href="https://wa.me/5511973377172?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20o%20Fremon." target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:leandro@fremasa.com.br">leandro@fremasa.com.br</a></div>
+        <div class="footer-nav"><span>ACESSAR</span><a href="https://app.fremon.com.br/login" target="_blank" rel="noreferrer">Entrar na plataforma ↗</a><a href="/politica-de-privacidade/">Política de privacidade</a><a href="/termos-de-servico/">Termos de serviço</a></div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span data-current-year>2026</span> Fremon. Todos os direitos reservados.</p>
+        <p>Uma tecnologia criada a partir da experiência do Grupo FREMASA.</p>
+        <a href="#inicio">Voltar ao topo ↑</a>
+      </div>
+    </footer>
+
+    <noscript><p class="noscript">A página continua disponível, mas algumas demonstrações interativas exigem JavaScript.</p></noscript>
+    <script type="module" src="/src/final.js"></script>
+  </body>
+</html>

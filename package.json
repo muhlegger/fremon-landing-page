@@ -1,0 +1,22 @@
+{
+  "name": "fremon-landing-page",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page do Fremon (gestão de manutenção predial para síndicos): HTML, CSS e JS nativos sobre Vite.",
+  "author": "Gustavo Muhlegger",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@fontsource-variable/manrope": "^5.2.7",
+    "@fontsource-variable/source-serif-4": "^5.2.8",
+    "vite": "^7.0.0"
+  }
+}
