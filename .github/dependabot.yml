@@ -1,0 +1,7 @@
+version: 2
+updates:
+  # As actions do CI estão fixadas por hash; o Dependabot abre um PR quando sai versão nova.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
