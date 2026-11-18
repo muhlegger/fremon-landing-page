@@ -757,8 +757,7 @@ button {
   border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.building-marker--top .marker-line::after,
-.building-marker--side .marker-line::after {
+.building-marker--top .marker-line::after {
   position: absolute;
   width: 6px;
   height: 6px;
@@ -771,42 +770,6 @@ button {
 .building-marker--top .marker-line::after {
   bottom: -3px;
   left: -3px;
-}
-
-.building-marker--side {
-  right: -18px;
-  bottom: -72px;
-}
-
-.building-marker--side .marker-line {
-  position: absolute;
-  right: calc(100% + 11px);
-  bottom: 18px;
-  width: 115px;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.building-marker--side .marker-line::after {
-  top: -3px;
-  left: -3px;
-}
-
-.hero-product-caption {
-  position: absolute;
-  bottom: -82px;
-  left: 18px;
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
-  color: #a6b0b4;
-  font-size: 0.72rem;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.hero-product-caption span {
-  color: var(--copper-bright);
 }
 
 .scroll-cue {
@@ -2992,10 +2955,6 @@ button {
     top: -58px;
   }
 
-  .building-marker--side {
-    right: 0;
-  }
-
   .scroll-cue {
     display: none;
   }
@@ -3173,8 +3132,7 @@ button {
     min-height: 360px;
   }
 
-  .building-marker,
-  .hero-product-caption {
+  .building-marker {
     display: none;
   }
 
@@ -3502,8 +3460,9 @@ button {
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.75rem, 13.5vw, 4.25rem);
-    line-height: 0.99;
+    font-size: clamp(2.1rem, 9.4vw, 3.4rem);
+    line-height: 1.02;
+    text-wrap: balance;
   }
 
   .hero-intro {
@@ -3863,10 +3822,6 @@ button {
 
 .shot-bar--hero {
   height: 36px;
-}
-
-.hero-product-caption {
-  left: 196px;
 }
 
 /* Origem: atalho para a FREMASA ------------------------------------------- */
@@ -5270,6 +5225,7 @@ button.xray-floor.is-selected::after {
    ========================================================================== */
 
 .plans-heading h2 em,
+.terms-section h2 em,
 .implant-copy h2 em,
 .faq-heading h2 em {
   color: #a35d31;
@@ -8203,9 +8159,6 @@ button.xray-floor.is-selected::after {
 }
 
 @media (min-width: 1051px) and (max-width: 1599px) {
-  .building-marker--side {
-    display: none;
-  }
 }
 
 .interface-note {
@@ -8221,12 +8174,36 @@ button.xray-floor.is-selected::after {
 
 /* Título do hero um pouco menor: o botão principal aparece sem rolar em 1440 × 900 */
 @media (min-width: 1051px) {
+  /* O topo ocupa a tela inteira, com o conteúdo centrado na altura que sobra */
   .hero {
-    padding-top: 156px;
+    display: grid;
+    min-height: max(900px, 100svh);
+    align-content: center;
+    padding-top: 144px;
+    padding-bottom: 76px;
   }
 
+  /* Título ao lado da janela do sistema, perto do tamanho original. Os espaços entre os blocos
+     encolhem um pouco para os dois botões continuarem na primeira tela. */
   .hero-copy h1 {
-    font-size: clamp(3rem, min(4.7vw, 7.6vh), 4.9rem);
+    margin-top: 20px;
+    font-size: clamp(2.8rem, min(4.35vw, 7.2vh), 4.1rem);
+    line-height: 1;
+  }
+
+  .hero-intro {
+    margin-top: 22px;
+    font-size: clamp(1.02rem, 1.26vw, 1.16rem);
+    line-height: 1.68;
+  }
+
+  .hero-copy .button-row {
+    margin-top: 28px;
+  }
+
+  .hero-assurance {
+    margin-top: 26px;
+    padding-top: 20px;
   }
 }
 
@@ -9293,5 +9270,558 @@ button.xray-floor.is-selected::after {
 
   .mobile-cta-whatsapp {
     padding-inline: 12px;
+  }
+}
+
+/* Campanha temporária (Black Friday até 15/12/2026) -------------------------
+   Barra no alto do cabeçalho, que recolhe ao rolar, e a seção da oferta logo abaixo do topo. */
+.site-header.has-promo {
+  height: 124px;
+}
+
+.site-header.has-promo.is-scrolled,
+.site-header.has-promo.is-menu-open {
+  height: 72px;
+}
+
+.has-promo .header-inner {
+  height: calc(100% - 40px);
+}
+
+.has-promo.is-scrolled .header-inner,
+.has-promo.is-menu-open .header-inner {
+  height: 100%;
+}
+
+.promo-bar {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  overflow: hidden;
+  padding-inline: 16px;
+  background: linear-gradient(90deg, #e8944a, #f4b56e 50%, #e8944a);
+  color: var(--ink);
+  font-size: 0.84rem;
+  white-space: nowrap;
+  transition: height 280ms var(--ease-out);
+}
+
+.is-scrolled .promo-bar,
+.is-menu-open .promo-bar {
+  height: 0;
+}
+
+.promo-bar strong {
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: var(--ink);
+  color: var(--copper-bright);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Pulso discreto da campanha: o ponto dos selos e um halo no botão. Só opacity e transform,
+   que o navegador anima sem redesenhar a página. */
+.promo-bar strong,
+.promo-tag strong,
+.promo-reminder strong {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.promo-bar strong::before,
+.promo-tag strong::before,
+.promo-reminder strong::before {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: currentColor;
+  animation: promo-dot 1.8s ease-in-out infinite;
+  content: "";
+}
+
+.promo-side .button {
+  position: relative;
+}
+
+.promo-side .button::after {
+  position: absolute;
+  inset: -7px;
+  border: 2px solid var(--copper-bright);
+  border-radius: 14px;
+  animation: promo-halo 2.6s ease-in-out infinite;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes promo-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes promo-halo {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+}
+
+/* Lembrete da campanha no alto dos planos */
+.promo-reminder {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: #1b1410;
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.promo-reminder strong {
+  padding: 5px 11px;
+  border-radius: 100px;
+  background: var(--copper-bright);
+  color: var(--ink);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.promo-reminder em {
+  color: var(--copper-bright);
+  font-style: normal;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.promo-bar > span {
+  overflow: hidden;
+  font-weight: 650;
+  text-overflow: ellipsis;
+}
+
+.promo-bar em {
+  font-style: normal;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.promo-band {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  padding-block: 64px;
+  border-top: 1px solid rgba(238, 162, 91, 0.5);
+  background:
+    radial-gradient(60% 120% at 8% 0%, rgba(201, 121, 67, 0.34), transparent 62%),
+    radial-gradient(45% 90% at 100% 100%, rgba(238, 162, 91, 0.16), transparent 70%), #14100d;
+  color: var(--white);
+}
+
+.promo-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: clamp(32px, 6vw, 90px);
+  align-items: center;
+}
+
+.promo-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.promo-tag strong {
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: var(--copper-bright);
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.promo-tag span {
+  color: #f3d9bd;
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+}
+
+.promo-main h2 {
+  max-width: 620px;
+  margin-top: 22px;
+  color: var(--white);
+  font-size: clamp(1.9rem, 3.3vw, 3rem);
+  font-weight: 560;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+}
+
+.promo-main h2 em {
+  color: #e9c9a6;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.promo-price {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  margin-top: 26px;
+}
+
+.promo-price small {
+  padding-bottom: 14px;
+  color: var(--text-inverse-muted);
+  font-size: 0.9rem;
+}
+
+.promo-price strong {
+  color: var(--copper-bright);
+  font-size: clamp(3.6rem, 7vw, 5.6rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 620;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.promo-price strong sup {
+  position: relative;
+  top: -1.25em;
+  margin-right: 4px;
+  font-size: 0.26em;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.promo-price > span {
+  padding-bottom: 8px;
+  color: var(--white);
+  font-size: 0.98rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.promo-side {
+  padding: 28px;
+  border: 1px solid rgba(238, 162, 91, 0.32);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+/* Contagem regressiva: algarismos de largura fixa, para os números não dançarem a cada segundo */
+.promo-countdown {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line-inverse);
+}
+
+.promo-countdown > small {
+  color: var(--copper-bright);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.promo-clock {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.promo-clock span {
+  display: grid;
+  gap: 6px;
+  padding: 14px 4px 10px;
+  border: 1px solid rgba(238, 162, 91, 0.28);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.promo-clock b {
+  color: var(--white);
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.promo-clock .is-seconds b {
+  color: var(--copper-bright);
+}
+
+.promo-clock i {
+  color: var(--text-inverse-muted);
+  font-size: 0.66rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.promo-bar-clock {
+  min-width: 118px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(16, 21, 24, 0.14);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  text-align: center;
+}
+
+.promo-side > small {
+  color: var(--copper-bright);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.promo-side ul {
+  margin: 10px 0 22px;
+}
+
+.promo-side li {
+  position: relative;
+  padding: 13px 0 13px 30px;
+  border-bottom: 1px solid var(--line-inverse);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.promo-side li::before {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  color: var(--copper-bright);
+  content: "✓" / "";
+  font-weight: 800;
+}
+
+.promo-note {
+  margin-top: 14px;
+  color: var(--text-inverse-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Condições e normas */
+.terms-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.terms-list {
+  display: grid;
+  gap: 0;
+  padding: 8px 30px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.terms-list li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.terms-list li:last-child {
+  border-bottom: 0;
+}
+
+.terms-list li > span {
+  padding-top: 4px;
+  color: #a35d31;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.terms-list strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.terms-list p {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.norms-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.norms-card > small {
+  color: var(--copper-bright);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.norms-card dl {
+  display: grid;
+  margin-top: 12px;
+}
+
+.norms-card dl > div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line-inverse);
+}
+
+.norms-card dl > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.norms-card dt {
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.norms-card dd {
+  color: var(--text-inverse-muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* Rodapé: endereço */
+.footer-address {
+  margin-top: 16px;
+  color: #929da1;
+  font-size: 0.8rem;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .promo-band {
+    padding-block: 44px;
+  }
+
+  .promo-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .promo-bar-extra,
+  .promo-bar-clock {
+    display: none;
+  }
+
+  .promo-reminder {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    justify-items: start;
+  }
+
+  .terms-grid {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header.has-promo {
+    height: 108px;
+  }
+
+  .site-header.has-promo.is-scrolled,
+  .site-header.has-promo.is-menu-open {
+    height: 68px;
+  }
+
+  /* O cabeçalho fica 40 px mais alto com a barra: o topo desce junto para o texto não encostar */
+  .site-header.has-promo ~ main .hero {
+    padding-top: 150px;
+  }
+
+  .promo-bar {
+    gap: 9px;
+    font-size: 0.76rem;
+  }
+
+  .promo-bar em {
+    display: none;
+  }
+
+  .promo-side {
+    padding: 22px 20px;
+  }
+
+  .terms-list {
+    padding: 4px 20px;
+  }
+
+  .norms-card {
+    padding: 24px 20px;
+  }
+
+  .norms-card dl > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-bar {
+    transition: none;
+  }
+
+  .promo-bar strong::before,
+  .promo-tag strong::before,
+  .promo-reminder strong::before,
+  .promo-side .button::after {
+    animation: none;
   }
 }

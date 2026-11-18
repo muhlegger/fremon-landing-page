@@ -921,6 +921,49 @@ if (sitterChart) {
   }
 }
 
+// Campanha temporária -------------------------------------------------------
+// Contagem regressiva até o fim do último dia (horário de Brasília). Quando o prazo acaba, a
+// campanha (barra do alto, seção da oferta e lembrete nos planos) sai sozinha da página.
+
+const promoBand = document.querySelector("[data-promo-until]");
+
+if (promoBand) {
+  const promoEnd = Date.parse(`${promoBand.dataset.promoUntil}T23:59:59-03:00`);
+  const clockUnits = Object.fromEntries(
+    [...promoBand.querySelectorAll("[data-promo-clock] [data-unit]")].map((element) => [element.dataset.unit, element]),
+  );
+  const shortClock = document.querySelector("[data-promo-clock-short]");
+  const pad = (value) => String(value).padStart(2, "0");
+  let promoTimer = 0;
+
+  const endPromo = () => {
+    window.clearInterval(promoTimer);
+    promoBand.remove();
+    document.querySelectorAll("[data-promo]").forEach((element) => element.remove());
+    siteHeader?.classList.remove("has-promo");
+  };
+
+  const tickPromo = () => {
+    const left = Math.floor((promoEnd - Date.now()) / 1000);
+    if (left < 0) return endPromo();
+
+    const parts = {
+      d: Math.floor(left / 86400),
+      h: Math.floor(left / 3600) % 24,
+      m: Math.floor(left / 60) % 60,
+      s: left % 60,
+    };
+    Object.entries(parts).forEach(([unit, value]) => {
+      const text = pad(value);
+      if (clockUnits[unit] && clockUnits[unit].textContent !== text) clockUnits[unit].textContent = text;
+    });
+    if (shortClock) shortClock.textContent = `${parts.d}d ${pad(parts.h)}h ${pad(parts.m)}m ${pad(parts.s)}s`;
+  };
+
+  tickPromo();
+  if (promoBand.isConnected) promoTimer = window.setInterval(tickPromo, 1000);
+}
+
 // Recomendação contextual de planos ---------------------------------------
 
 const profileSelector = document.querySelector("[data-profile-selector]");
@@ -1053,7 +1096,7 @@ demoForm?.addEventListener("submit", (event) => {
 
   const whatsappLink = demoForm.querySelector("[data-whatsapp-submit]");
   if (whatsappLink) {
-    whatsappLink.href = `https://wa.me/5511973377172?text=${encodeURIComponent(message)}`;
+    whatsappLink.href = `https://wa.me/5511984939016?text=${encodeURIComponent(message)}`;
   }
 
   const success = demoForm.querySelector(".form-success");
