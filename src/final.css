@@ -5703,6 +5703,19 @@ button.xray-floor.is-selected::after {
   font-size: clamp(1.4rem, 1.9vw, 1.8rem);
 }
 
+/* Cartão sem coluna de preço: o texto ocupa a largura toda e traz a condição na própria frase */
+@media (min-width: 821px) {
+  .special-plans .special-plan--text > div {
+    padding-right: 30px;
+    grid-column: 2 / -1;
+  }
+}
+
+.special-plans .special-plan--text > div p strong {
+  color: var(--ink);
+  font-weight: 750;
+}
+
 .special-plans article > div p {
   font-size: 0.86rem;
 }
