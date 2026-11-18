@@ -8171,9 +8171,6 @@ button.xray-floor.is-selected::after {
   }
 }
 
-@media (min-width: 1051px) and (max-width: 1599px) {
-}
-
 .interface-note {
   right: 12px;
   bottom: 10px;
