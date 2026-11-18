@@ -887,9 +887,13 @@ button {
 }
 
 /* Cobre mais escuro que o --copper: sobre o papel, ele não chega ao contraste 3:1. */
-.metric--accent dt,
-.metric--accent dt sup {
+.metric--accent dt {
   color: #b5682f;
+}
+
+/* O texto pequeno ao lado do número ("cerca de", "%") precisa de 4,5:1 sobre o papel. */
+.metric--accent dt sup {
+  color: #96531f;
 }
 
 .data-scope {
