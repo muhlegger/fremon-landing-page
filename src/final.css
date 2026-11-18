@@ -2054,7 +2054,7 @@ button {
 
 .plan-journey {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 65px;
   border: 1px solid var(--line);
 }
@@ -3080,26 +3080,6 @@ button {
     gap: 45px;
   }
 
-  .plan-journey {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .plan-card:nth-child(2) {
-    border-right: 0;
-  }
-
-  .plan-card:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .plan-card--featured {
-    margin-top: 28px;
-  }
-
-  .plan-card--dark {
-    margin-top: 28px;
-  }
-
   .faq-layout,
   .contact-layout {
     grid-template-columns: 1fr 1.2fr;
@@ -3725,11 +3705,6 @@ button {
   .plan-card:hover,
   .plan-card.is-recommended {
     transform: none;
-  }
-
-  .plan-card--featured,
-  .plan-card--dark {
-    margin-top: 28px;
   }
 
   .special-plans article {
@@ -5462,6 +5437,60 @@ button.xray-floor.is-selected::after {
   background: linear-gradient(180deg, #1a2328, var(--ink) 50%);
 }
 
+/* A marca fica como rótulo acima do nome do plano: o nome é o que se compara entre os cartões */
+.plan-journey .plan-card h3 span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--steel);
+  font-family: var(--font-sans, inherit);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.plan-journey .plan-card--dark h3 span {
+  color: var(--copper-bright);
+}
+
+/* Reformas e Implantação: contratação à parte, fora da escada dos três planos */
+.plan-extra-heading {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  margin-top: 56px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.plan-extra-heading span {
+  color: #a35d31;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.plan-extra-heading p {
+  max-width: 640px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.plan-journey.plan-journey--extra {
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 22px;
+}
+
+/* Abaixo de 900 px três colunas apertam o rótulo e o preço: um plano por linha */
+@media (max-width: 900px) {
+  .plan-journey,
+  .plan-journey.plan-journey--extra {
+    grid-template-columns: 1fr;
+  }
+}
+
 .plan-ribbon {
   top: -13px;
   right: auto;
@@ -5511,9 +5540,6 @@ button.xray-floor.is-selected::after {
 }
 .plan-level i:nth-child(3) {
   height: 13px;
-}
-.plan-level i:nth-child(4) {
-  height: 16px;
 }
 
 .plan-level i.is-on {
@@ -5761,8 +5787,8 @@ button.xray-floor.is-selected::after {
   font-size: 0.82rem;
 }
 
-.comparison-scroll th:nth-child(4),
-.comparison-scroll td:nth-child(4) {
+.comparison-scroll th:nth-child(3),
+.comparison-scroll td:nth-child(3) {
   background: rgba(201, 121, 67, 0.07);
 }
 
@@ -5786,6 +5812,13 @@ button.xray-floor.is-selected::after {
   content: "×" / "";
   font-size: 1.05rem;
   font-weight: 600;
+}
+
+/* Recurso que não faz parte do plano, mas pode ser contratado junto */
+.comparison-scroll td.is-note {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.4;
 }
 
 /* Implantação ------------------------------------------------------------- */
@@ -6221,6 +6254,16 @@ button.xray-floor.is-selected::after {
 
   .plan-units-label {
     grid-row: auto;
+  }
+
+  .plan-journey,
+  .plan-journey.plan-journey--extra {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-extra-heading {
+    grid-template-columns: 1fr;
+    gap: 7px;
   }
 
   .special-plans article,

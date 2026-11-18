@@ -929,29 +929,29 @@ const planCards = [...document.querySelectorAll("[data-plan-card]")];
 
 const profileRecommendations = {
   sindico: {
-    plan: "intelligence",
-    title: "Intelligence",
-    text: "para reunir controle preventivo e apoio técnico em uma operação condominial completa.",
+    plan: "preventiva",
+    title: "Fremon Preventiva",
+    text: "para reunir acervo, plano de manutenção e inspeção predial anual em uma rotina só.",
+  },
+  entregue: {
+    plan: "implantacao",
+    title: "Fremon Implantação",
+    text: "para atravessar os primeiros 24 meses com laudo de recebimento, acervo, reformas e garantias registrados.",
   },
   profissional: {
-    plan: "black",
-    title: "Fremon Institucional + Black",
-    text: "para comparar entidades e ampliar o acompanhamento sobre múltiplas operações.",
+    plan: "preventiva",
+    title: "Fremon Preventiva em cada condomínio",
+    text: "para levar o mesmo padrão de acervo, prazos e manutenção a todos os prédios que você atende.",
   },
   administradora: {
-    plan: "compliance",
-    title: "Fremon Institucional + Compliance",
-    text: "para padronizar documentos, obrigações e rotinas preventivas em toda a carteira.",
+    plan: "preventiva",
+    title: "Condições para administradoras",
+    text: "com desconto de 5%, 8% ou 12% conforme o número de condomínios da carteira.",
   },
   residencia: {
     plan: null,
-    title: "Fremon Private",
+    title: "Fremon Residência",
     text: "para preservar acervo, manutenção e memória técnica de uma residência de alto padrão.",
-  },
-  portfolio: {
-    plan: "black",
-    title: "Fremon Institucional",
-    text: "para consolidar a governança técnica e a leitura comparável de diferentes ativos.",
   },
 };
 
