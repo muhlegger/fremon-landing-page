@@ -2763,6 +2763,7 @@ button {
   align-items: center;
   color: #929da1;
   font-size: 0.86rem;
+  white-space: nowrap;
   transition: color 180ms ease;
 }
 
